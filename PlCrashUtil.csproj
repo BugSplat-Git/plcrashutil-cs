@@ -5,10 +5,44 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <AssemblyName>plcrashutil</AssemblyName>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>PLCrashUtil</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>BugSplat LLC</Authors>
+    <Company>BugSplat LLC</Company>
+    <Product>PLCrashUtil</Product>
+    <Description>A .NET library and command-line utility for parsing and converting PLCrash reports to iOS-compatible crash logs. Supports reading PLCrashReporter protobuf format and provides both programmatic API and CLI access for crash report analysis.</Description>
+    <Summary>Parse and convert PLCrash reports with .NET - includes both library API and CLI tool</Summary>
+    <PackageTags>crash-report;plcrash;ios;debugging;protobuf;crash-analysis;apple;mobile;dotnet-tool;library</PackageTags>
+    <PackageProjectUrl>https://github.com/BugSplatGit/plcrashutil-cs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BugSplatGit/plcrashutil-cs</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Initial release with both library API and CLI tool support</PackageReleaseNotes>
+    <Copyright>Copyright (c) BugSplat LLC</Copyright>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    
+    <!-- Global Tool Configuration -->
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>plcrashutil</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    
+    <!-- Library Configuration -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE" Pack="true" PackagePath="\" />
+    <None Include="ThirdPartyNotices.txt" Pack="true" PackagePath="\" />
   </ItemGroup>
 
 </Project> 
