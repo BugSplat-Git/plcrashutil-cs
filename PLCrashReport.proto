@@ -1,0 +1,229 @@
+syntax = "proto3";
+package plcrash;
+option csharp_namespace = "PLCrashUtil.Core";
+
+// Legacy processor architecture type codes. These codes have been deprecated.
+enum Architecture {
+    // x86
+    X86_32 = 0;
+    // x86-64
+    X86_64 = 1;
+    // ARMv6
+    ARMV6 = 2;
+    // PPC
+    PPC = 3;
+    // PPC64
+    PPC64 = 4;
+    // ARMv7
+    ARMV7 = 5;
+    // Unknown processor type.
+    ARCHITECTURE_UNKNOWN = 6;
+}
+
+// A crash report
+message CrashReport {
+    // Processor information
+    message Processor {
+        // CPU Type Encodings
+        enum TypeEncoding {
+            // Unknown processor type encoding.
+            TYPE_ENCODING_UNKNOWN = 0;
+            // Apple Mach-defined processor types.
+            TYPE_ENCODING_MACH = 1;
+        }
+        
+        // The CPU type encoding that should be used to interpret cpu_type and cpu_subtype.
+        TypeEncoding encoding = 1;
+        // The CPU type.
+        uint64 type = 2;
+        // The CPU subtype.
+        uint64 subtype = 3;
+    }
+
+    message SystemInfo {
+        // Known operating system types
+        enum OperatingSystem {
+            // Mac OS X
+            MAC_OS_X = 0;
+            // iPhone OS
+            IPHONE_OS = 1;
+            // iPhone Simulator (Mac OS X w/ simulator runtime environment)
+            IPHONE_SIMULATOR = 2;
+            // Unknown operating system.
+            OS_UNKNOWN = 3;
+            // Apple tvOS
+            APPLE_TVOS = 4;
+        }
+
+        // Operating system
+        OperatingSystem operating_system = 1;
+        // OS version
+        string os_version = 2;
+        // Processor architecture (deprecated in favor of machine_info)
+        Architecture architecture = 3;
+        // Date crash report was generated (as seconds since epoch)
+        int64 timestamp = 4;
+        // OS build number (eg, 10J869)
+        string os_build = 5;
+    }
+
+    // Host system data
+    SystemInfo system_info = 1;
+
+    // Application info
+    message ApplicationInfo {
+        // Unique application identifier
+        string identifier = 1;
+        // Application version string
+        string version = 2;
+        // Application marketing version string
+        string marketing_version = 3;
+    }
+    ApplicationInfo application_info = 2;
+    
+    // A symbol table entry.
+    message Symbol {
+        // The symbol name
+        string name = 1;
+        // The symbol start address
+        uint64 start_address = 2;
+        // The symbol end address, if explicitly defined.
+        uint64 end_address = 3;
+    }
+
+    // Thread state
+    message Thread {
+        // Thread number (indexed at 0, must be unique within a crash report)
+        uint32 thread_number = 1;
+        
+        // Stack frame
+        message StackFrame {
+            // Instruction pointer
+            uint64 pc = 3;
+            // Optional symbol information for this frame's PC.
+            Symbol symbol = 6;
+        }
+
+        // Backtrace stack frames
+        repeated StackFrame frames = 2;
+        // True if this is the crashed thread
+        bool crashed = 3;
+        
+        // A single register value
+        message RegisterValue {
+            // Register name (r1, ebp, ...)
+            string name = 1;
+            // Register value
+            uint64 value = 2;
+        }
+
+        // Thread registers
+        repeated RegisterValue registers = 4;
+    }
+
+    // All backtraces
+    repeated Thread threads = 3;
+
+    // Binary image
+    message BinaryImage {
+        // Image base address
+        uint64 base_address = 1;
+        // Segment size
+        uint64 size = 2;
+        // Name of the binary image (should be a full path name)
+        string name = 3;
+        // 128-bit object UUID (matches Mach-O DWARF dSYM files)
+        bytes uuid = 4;
+        // The image's code type.
+        Processor code_type = 5;
+    }
+
+    // All loaded binary images
+    repeated BinaryImage binary_images = 4;
+
+    // Exception
+    message Exception {
+        // The exception name that triggered this crash
+        string name = 1;
+        // The exception reason
+        string reason = 2;
+        // The exception's original call stack, if available.
+        repeated Thread.StackFrame frames = 3;
+    }
+
+    // The exception that triggered the crash (if any)
+    Exception exception = 5;
+
+    // Signal Information
+    message Signal {
+        // Mach exception info.
+        message MachException {
+            // The exception type.
+            uint64 type = 1;
+            // The exception codes.
+            repeated uint64 codes = 2;
+        }
+
+        // Signal name
+        string name = 1;
+        // Signal code
+        string code = 2;
+        // The signal address
+        uint64 address = 3;
+        // Mach exception info (optional)
+        MachException mach_exception = 4;
+    }
+
+    // The signal that triggered the crash
+    Signal signal = 6;
+
+    // Process info
+    message ProcessInfo {
+        // Application process name
+        string process_name = 1;
+        // Application process ID
+        uint32 process_id = 2;
+        // Application process path
+        string process_path = 3;
+        // Application parent process name
+        string parent_process_name = 4;
+        // Application parent process ID
+        uint32 parent_process_id = 5;
+        // If false, the process is being run via process-level CPU emulation (such as Rosetta).
+        bool native = 6;
+        // The start time of the process (as seconds since UNIX epoch).
+        uint64 start_time = 7;
+    }
+
+    // The process info.
+    ProcessInfo process_info = 7;
+
+    // Host architecture information.
+    message MachineInfo {
+        // Hardware model (eg, MacBookPro6,1)
+        string model = 1;
+        // The host processor.
+        Processor processor = 2;
+        // The number of actual physical processor cores.
+        uint32 processor_count = 3;
+        // The number of logical processors.
+        uint32 logical_processor_count = 4;
+    }
+
+    // Host architecture information.
+    MachineInfo machine_info = 8;
+
+    // Report format information
+    message ReportInfo {
+        // If true, this report was generated on request, and no crash occured.
+        bool user_requested = 1;
+        // A client-generated 16 byte OSF standard UUID for this report.
+        bytes uuid = 2;
+    }
+
+    // Report format information.
+    ReportInfo report_info = 9;
+
+    // Custom data. Can be used by user to store contextual information for the crash.
+    bytes custom_data = 10;
+} 
