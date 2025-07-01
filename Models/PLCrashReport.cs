@@ -1,5 +1,4 @@
-using Google.Protobuf;
-using PLCrashUtil.Core;
+using Plcrash;
 using System;
 using System.IO;
 using System.Linq;
@@ -147,7 +146,7 @@ namespace PLCrashUtil.Models
 
             // Parse the protobuf data
             var protobufData = new ReadOnlySpan<byte>(data, 8, data.Length - 8);
-            var crashReport = CrashReport.Parser.ParseFrom(protobufData.ToArray());
+            var crashReport = Plcrash.CrashReport.Parser.ParseFrom(protobufData.ToArray());
 
             // Extract all the information
             ExtractInformation(crashReport);

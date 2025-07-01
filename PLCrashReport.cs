@@ -9,7 +9,7 @@ using pb = global::Google.Protobuf;
 using pbc = global::Google.Protobuf.Collections;
 using pbr = global::Google.Protobuf.Reflection;
 using scg = global::System.Collections.Generic;
-namespace PLCrashUtil.Core {
+namespace Plcrash {
 
   /// <summary>Holder for reflection information generated from PLCrashReport.proto</summary>
   public static partial class PLCrashReportReflection {
@@ -24,74 +24,76 @@ namespace PLCrashUtil.Core {
     static PLCrashReportReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChNQTENyYXNoUmVwb3J0LnByb3RvEgdwbGNyYXNoIooRCgtDcmFzaFJlcG9y",
-            "dBI0CgtzeXN0ZW1faW5mbxgBIAEoCzIfLnBsY3Jhc2guQ3Jhc2hSZXBvcnQu",
-            "U3lzdGVtSW5mbxI+ChBhcHBsaWNhdGlvbl9pbmZvGAIgASgLMiQucGxjcmFz",
+            "ChNQTENyYXNoUmVwb3J0LnByb3RvEgdwbGNyYXNoIsMRCgtDcmFzaFJlcG9y",
+            "dBI0CgtzeXN0ZW1faW5mbxgBIAIoCzIfLnBsY3Jhc2guQ3Jhc2hSZXBvcnQu",
+            "U3lzdGVtSW5mbxI+ChBhcHBsaWNhdGlvbl9pbmZvGAIgAigLMiQucGxjcmFz",
             "aC5DcmFzaFJlcG9ydC5BcHBsaWNhdGlvbkluZm8SLAoHdGhyZWFkcxgDIAMo",
             "CzIbLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuVGhyZWFkEjcKDWJpbmFyeV9pbWFn",
             "ZXMYBCADKAsyIC5wbGNyYXNoLkNyYXNoUmVwb3J0LkJpbmFyeUltYWdlEjEK",
             "CWV4Y2VwdGlvbhgFIAEoCzIeLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuRXhjZXB0",
-            "aW9uEisKBnNpZ25hbBgGIAEoCzIbLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuU2ln",
+            "aW9uEisKBnNpZ25hbBgGIAIoCzIbLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuU2ln",
             "bmFsEjYKDHByb2Nlc3NfaW5mbxgHIAEoCzIgLnBsY3Jhc2guQ3Jhc2hSZXBv",
             "cnQuUHJvY2Vzc0luZm8SNgoMbWFjaGluZV9pbmZvGAggASgLMiAucGxjcmFz",
             "aC5DcmFzaFJlcG9ydC5NYWNoaW5lSW5mbxI0CgtyZXBvcnRfaW5mbxgJIAEo",
             "CzIfLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuUmVwb3J0SW5mbxITCgtjdXN0b21f",
-            "ZGF0YRgKIAEoDBqsAQoJUHJvY2Vzc29yEj0KCGVuY29kaW5nGAEgASgOMisu",
-            "cGxjcmFzaC5DcmFzaFJlcG9ydC5Qcm9jZXNzb3IuVHlwZUVuY29kaW5nEgwK",
-            "BHR5cGUYAiABKAQSDwoHc3VidHlwZRgDIAEoBCJBCgxUeXBlRW5jb2RpbmcS",
-            "GQoVVFlQRV9FTkNPRElOR19VTktOT1dOEAASFgoSVFlQRV9FTkNPRElOR19N",
-            "QUNIEAEaowIKClN5c3RlbUluZm8SSQoQb3BlcmF0aW5nX3N5c3RlbRgBIAEo",
-            "DjIvLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuU3lzdGVtSW5mby5PcGVyYXRpbmdT",
-            "eXN0ZW0SEgoKb3NfdmVyc2lvbhgCIAEoCRIrCgxhcmNoaXRlY3R1cmUYAyAB",
-            "KA4yFS5wbGNyYXNoLkFyY2hpdGVjdHVyZRIRCgl0aW1lc3RhbXAYBCABKAMS",
-            "EAoIb3NfYnVpbGQYBSABKAkiZAoPT3BlcmF0aW5nU3lzdGVtEgwKCE1BQ19P",
-            "U19YEAASDQoJSVBIT05FX09TEAESFAoQSVBIT05FX1NJTVVMQVRPUhACEg4K",
-            "Ck9TX1VOS05PV04QAxIOCgpBUFBMRV9UVk9TEAQaUQoPQXBwbGljYXRpb25J",
-            "bmZvEhIKCmlkZW50aWZpZXIYASABKAkSDwoHdmVyc2lvbhgCIAEoCRIZChFt",
-            "YXJrZXRpbmdfdmVyc2lvbhgDIAEoCRpCCgZTeW1ib2wSDAoEbmFtZRgBIAEo",
-            "CRIVCg1zdGFydF9hZGRyZXNzGAIgASgEEhMKC2VuZF9hZGRyZXNzGAMgASgE",
-            "GpsCCgZUaHJlYWQSFQoNdGhyZWFkX251bWJlchgBIAEoDRI2CgZmcmFtZXMY",
-            "AiADKAsyJi5wbGNyYXNoLkNyYXNoUmVwb3J0LlRocmVhZC5TdGFja0ZyYW1l",
-            "Eg8KB2NyYXNoZWQYAyABKAgSPAoJcmVnaXN0ZXJzGAQgAygLMikucGxjcmFz",
-            "aC5DcmFzaFJlcG9ydC5UaHJlYWQuUmVnaXN0ZXJWYWx1ZRpFCgpTdGFja0Zy",
-            "YW1lEgoKAnBjGAMgASgEEisKBnN5bWJvbBgGIAEoCzIbLnBsY3Jhc2guQ3Jh",
-            "c2hSZXBvcnQuU3ltYm9sGiwKDVJlZ2lzdGVyVmFsdWUSDAoEbmFtZRgBIAEo",
-            "CRINCgV2YWx1ZRgCIAEoBBqAAQoLQmluYXJ5SW1hZ2USFAoMYmFzZV9hZGRy",
-            "ZXNzGAEgASgEEgwKBHNpemUYAiABKAQSDAoEbmFtZRgDIAEoCRIMCgR1dWlk",
-            "GAQgASgMEjEKCWNvZGVfdHlwZRgFIAEoCzIeLnBsY3Jhc2guQ3Jhc2hSZXBv",
-            "cnQuUHJvY2Vzc29yGmEKCUV4Y2VwdGlvbhIMCgRuYW1lGAEgASgJEg4KBnJl",
-            "YXNvbhgCIAEoCRI2CgZmcmFtZXMYAyADKAsyJi5wbGNyYXNoLkNyYXNoUmVw",
-            "b3J0LlRocmVhZC5TdGFja0ZyYW1lGqYBCgZTaWduYWwSDAoEbmFtZRgBIAEo",
-            "CRIMCgRjb2RlGAIgASgJEg8KB2FkZHJlc3MYAyABKAQSQQoObWFjaF9leGNl",
-            "cHRpb24YBCABKAsyKS5wbGNyYXNoLkNyYXNoUmVwb3J0LlNpZ25hbC5NYWNo",
-            "RXhjZXB0aW9uGiwKDU1hY2hFeGNlcHRpb24SDAoEdHlwZRgBIAEoBBINCgVj",
-            "b2RlcxgCIAMoBBqpAQoLUHJvY2Vzc0luZm8SFAoMcHJvY2Vzc19uYW1lGAEg",
-            "ASgJEhIKCnByb2Nlc3NfaWQYAiABKA0SFAoMcHJvY2Vzc19wYXRoGAMgASgJ",
-            "EhsKE3BhcmVudF9wcm9jZXNzX25hbWUYBCABKAkSGQoRcGFyZW50X3Byb2Nl",
-            "c3NfaWQYBSABKA0SDgoGbmF0aXZlGAYgASgIEhIKCnN0YXJ0X3RpbWUYByAB",
-            "KAQaiQEKC01hY2hpbmVJbmZvEg0KBW1vZGVsGAEgASgJEjEKCXByb2Nlc3Nv",
-            "chgCIAEoCzIeLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuUHJvY2Vzc29yEhcKD3By",
-            "b2Nlc3Nvcl9jb3VudBgDIAEoDRIfChdsb2dpY2FsX3Byb2Nlc3Nvcl9jb3Vu",
-            "dBgEIAEoDRoyCgpSZXBvcnRJbmZvEhYKDnVzZXJfcmVxdWVzdGVkGAEgASgI",
-            "EgwKBHV1aWQYAiABKAwqagoMQXJjaGl0ZWN0dXJlEgoKBlg4Nl8zMhAAEgoK",
-            "Blg4Nl82NBABEgkKBUFSTVY2EAISBwoDUFBDEAMSCQoFUFBDNjQQBBIJCgVB",
-            "Uk1WNxAFEhgKFEFSQ0hJVEVDVFVSRV9VTktOT1dOEAZCE6oCEFBMQ3Jhc2hV",
-            "dGlsLkNvcmViBnByb3RvMw=="));
+            "ZGF0YRgKIAEoDBrDAQoJUHJvY2Vzc29yElQKCGVuY29kaW5nGAEgASgOMisu",
+            "cGxjcmFzaC5DcmFzaFJlcG9ydC5Qcm9jZXNzb3IuVHlwZUVuY29kaW5nOhVU",
+            "WVBFX0VOQ09ESU5HX1VOS05PV04SDAoEdHlwZRgCIAIoBBIPCgdzdWJ0eXBl",
+            "GAMgAigEIkEKDFR5cGVFbmNvZGluZxIZChVUWVBFX0VOQ09ESU5HX1VOS05P",
+            "V04QABIWChJUWVBFX0VOQ09ESU5HX01BQ0gQARrFAgoKU3lzdGVtSW5mbxJV",
+            "ChBvcGVyYXRpbmdfc3lzdGVtGAEgASgOMi8ucGxjcmFzaC5DcmFzaFJlcG9y",
+            "dC5TeXN0ZW1JbmZvLk9wZXJhdGluZ1N5c3RlbToKT1NfVU5LTk9XThISCgpv",
+            "c192ZXJzaW9uGAIgAigJEkEKDGFyY2hpdGVjdHVyZRgDIAIoDjIVLnBsY3Jh",
+            "c2guQXJjaGl0ZWN0dXJlOhRBUkNISVRFQ1RVUkVfVU5LTk9XThIRCgl0aW1l",
+            "c3RhbXAYBCACKAMSEAoIb3NfYnVpbGQYBSABKAkiZAoPT3BlcmF0aW5nU3lz",
+            "dGVtEgwKCE1BQ19PU19YEAASDQoJSVBIT05FX09TEAESFAoQSVBIT05FX1NJ",
+            "TVVMQVRPUhACEg4KCkFQUExFX1RWT1MQBBIOCgpPU19VTktOT1dOEAMaUQoP",
+            "QXBwbGljYXRpb25JbmZvEhIKCmlkZW50aWZpZXIYASACKAkSDwoHdmVyc2lv",
+            "bhgCIAIoCRIZChFtYXJrZXRpbmdfdmVyc2lvbhgDIAEoCRpCCgZTeW1ib2wS",
+            "DAoEbmFtZRgBIAIoCRIVCg1zdGFydF9hZGRyZXNzGAIgAigEEhMKC2VuZF9h",
+            "ZGRyZXNzGAMgASgEGpsCCgZUaHJlYWQSFQoNdGhyZWFkX251bWJlchgBIAIo",
+            "DRI2CgZmcmFtZXMYAiADKAsyJi5wbGNyYXNoLkNyYXNoUmVwb3J0LlRocmVh",
+            "ZC5TdGFja0ZyYW1lEg8KB2NyYXNoZWQYAyACKAgSPAoJcmVnaXN0ZXJzGAQg",
+            "AygLMikucGxjcmFzaC5DcmFzaFJlcG9ydC5UaHJlYWQuUmVnaXN0ZXJWYWx1",
+            "ZRpFCgpTdGFja0ZyYW1lEgoKAnBjGAMgAigEEisKBnN5bWJvbBgGIAEoCzIb",
+            "LnBsY3Jhc2guQ3Jhc2hSZXBvcnQuU3ltYm9sGiwKDVJlZ2lzdGVyVmFsdWUS",
+            "DAoEbmFtZRgBIAIoCRINCgV2YWx1ZRgCIAIoBBqAAQoLQmluYXJ5SW1hZ2US",
+            "FAoMYmFzZV9hZGRyZXNzGAEgAigEEgwKBHNpemUYAiACKAQSDAoEbmFtZRgD",
+            "IAIoCRIMCgR1dWlkGAQgASgMEjEKCWNvZGVfdHlwZRgFIAEoCzIeLnBsY3Jh",
+            "c2guQ3Jhc2hSZXBvcnQuUHJvY2Vzc29yGmEKCUV4Y2VwdGlvbhIMCgRuYW1l",
+            "GAEgAigJEg4KBnJlYXNvbhgCIAIoCRI2CgZmcmFtZXMYAyADKAsyJi5wbGNy",
+            "YXNoLkNyYXNoUmVwb3J0LlRocmVhZC5TdGFja0ZyYW1lGqYBCgZTaWduYWwS",
+            "DAoEbmFtZRgBIAIoCRIMCgRjb2RlGAIgAigJEg8KB2FkZHJlc3MYAyACKAQS",
+            "QQoObWFjaF9leGNlcHRpb24YBCABKAsyKS5wbGNyYXNoLkNyYXNoUmVwb3J0",
+            "LlNpZ25hbC5NYWNoRXhjZXB0aW9uGiwKDU1hY2hFeGNlcHRpb24SDAoEdHlw",
+            "ZRgBIAIoBBINCgVjb2RlcxgCIAMoBBqpAQoLUHJvY2Vzc0luZm8SFAoMcHJv",
+            "Y2Vzc19uYW1lGAEgASgJEhIKCnByb2Nlc3NfaWQYAiACKA0SFAoMcHJvY2Vz",
+            "c19wYXRoGAMgASgJEhsKE3BhcmVudF9wcm9jZXNzX25hbWUYBCABKAkSGQoR",
+            "cGFyZW50X3Byb2Nlc3NfaWQYBSACKA0SDgoGbmF0aXZlGAYgAigIEhIKCnN0",
+            "YXJ0X3RpbWUYByABKAQaiQEKC01hY2hpbmVJbmZvEg0KBW1vZGVsGAEgASgJ",
+            "EjEKCXByb2Nlc3NvchgCIAIoCzIeLnBsY3Jhc2guQ3Jhc2hSZXBvcnQuUHJv",
+            "Y2Vzc29yEhcKD3Byb2Nlc3Nvcl9jb3VudBgDIAIoDRIfChdsb2dpY2FsX3By",
+            "b2Nlc3Nvcl9jb3VudBgEIAIoDRoyCgpSZXBvcnRJbmZvEhYKDnVzZXJfcmVx",
+            "dWVzdGVkGAEgAigIEgwKBHV1aWQYAiABKAwqagoMQXJjaGl0ZWN0dXJlEgoK",
+            "Blg4Nl8zMhAAEgoKBlg4Nl82NBABEgkKBUFSTVY2EAISBwoDUFBDEAMSCQoF",
+            "UFBDNjQQBBIJCgVBUk1WNxAFEhgKFEFSQ0hJVEVDVFVSRV9VTktOT1dOEAZC",
+            "LgocY29vcC5wbGF1c2libGUuY3Jhc2hyZXBvcnRlckIOQ3Jhc2hSZXBvcnRf",
+            "cGI="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
-          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::PLCrashUtil.Core.Architecture), }, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport), global::PLCrashUtil.Core.CrashReport.Parser, new[]{ "SystemInfo", "ApplicationInfo", "Threads", "BinaryImages", "Exception", "Signal", "ProcessInfo", "MachineInfo", "ReportInfo", "CustomData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Processor), global::PLCrashUtil.Core.CrashReport.Types.Processor.Parser, new[]{ "Encoding", "Type", "Subtype" }, null, new[]{ typeof(global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.SystemInfo), global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Parser, new[]{ "OperatingSystem", "OsVersion", "Architecture", "Timestamp", "OsBuild" }, null, new[]{ typeof(global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem) }, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo), global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo.Parser, new[]{ "Identifier", "Version", "MarketingVersion" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Symbol), global::PLCrashUtil.Core.CrashReport.Types.Symbol.Parser, new[]{ "Name", "StartAddress", "EndAddress" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Thread), global::PLCrashUtil.Core.CrashReport.Types.Thread.Parser, new[]{ "ThreadNumber", "Frames", "Crashed", "Registers" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame), global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame.Parser, new[]{ "Pc", "Symbol" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue), global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue.Parser, new[]{ "Name", "Value" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.BinaryImage), global::PLCrashUtil.Core.CrashReport.Types.BinaryImage.Parser, new[]{ "BaseAddress", "Size", "Name", "Uuid", "CodeType" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Exception), global::PLCrashUtil.Core.CrashReport.Types.Exception.Parser, new[]{ "Name", "Reason", "Frames" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Signal), global::PLCrashUtil.Core.CrashReport.Types.Signal.Parser, new[]{ "Name", "Code", "Address", "MachException" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException), global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException.Parser, new[]{ "Type", "Codes" }, null, null, null, null)}),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo), global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo.Parser, new[]{ "ProcessName", "ProcessId", "ProcessPath", "ParentProcessName", "ParentProcessId", "Native", "StartTime" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.MachineInfo), global::PLCrashUtil.Core.CrashReport.Types.MachineInfo.Parser, new[]{ "Model", "Processor", "ProcessorCount", "LogicalProcessorCount" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::PLCrashUtil.Core.CrashReport.Types.ReportInfo), global::PLCrashUtil.Core.CrashReport.Types.ReportInfo.Parser, new[]{ "UserRequested", "Uuid" }, null, null, null, null)})
+          new pbr::GeneratedClrTypeInfo(new[] {typeof(global::Plcrash.Architecture), }, null, new pbr::GeneratedClrTypeInfo[] {
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport), global::Plcrash.CrashReport.Parser, new[]{ "SystemInfo", "ApplicationInfo", "Threads", "BinaryImages", "Exception", "Signal", "ProcessInfo", "MachineInfo", "ReportInfo", "CustomData" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Processor), global::Plcrash.CrashReport.Types.Processor.Parser, new[]{ "Encoding", "Type", "Subtype" }, null, new[]{ typeof(global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.SystemInfo), global::Plcrash.CrashReport.Types.SystemInfo.Parser, new[]{ "OperatingSystem", "OsVersion", "Architecture", "Timestamp", "OsBuild" }, null, new[]{ typeof(global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem) }, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.ApplicationInfo), global::Plcrash.CrashReport.Types.ApplicationInfo.Parser, new[]{ "Identifier", "Version", "MarketingVersion" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Symbol), global::Plcrash.CrashReport.Types.Symbol.Parser, new[]{ "Name", "StartAddress", "EndAddress" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Thread), global::Plcrash.CrashReport.Types.Thread.Parser, new[]{ "ThreadNumber", "Frames", "Crashed", "Registers" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Thread.Types.StackFrame), global::Plcrash.CrashReport.Types.Thread.Types.StackFrame.Parser, new[]{ "Pc", "Symbol" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue), global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue.Parser, new[]{ "Name", "Value" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.BinaryImage), global::Plcrash.CrashReport.Types.BinaryImage.Parser, new[]{ "BaseAddress", "Size", "Name", "Uuid", "CodeType" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Exception), global::Plcrash.CrashReport.Types.Exception.Parser, new[]{ "Name", "Reason", "Frames" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Signal), global::Plcrash.CrashReport.Types.Signal.Parser, new[]{ "Name", "Code", "Address", "MachException" }, null, null, null, new pbr::GeneratedClrTypeInfo[] { new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.Signal.Types.MachException), global::Plcrash.CrashReport.Types.Signal.Types.MachException.Parser, new[]{ "Type", "Codes" }, null, null, null, null)}),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.ProcessInfo), global::Plcrash.CrashReport.Types.ProcessInfo.Parser, new[]{ "ProcessName", "ProcessId", "ProcessPath", "ParentProcessName", "ParentProcessId", "Native", "StartTime" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.MachineInfo), global::Plcrash.CrashReport.Types.MachineInfo.Parser, new[]{ "Model", "Processor", "ProcessorCount", "LogicalProcessorCount" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::Plcrash.CrashReport.Types.ReportInfo), global::Plcrash.CrashReport.Types.ReportInfo.Parser, new[]{ "UserRequested", "Uuid" }, null, null, null, null)})
           }));
     }
     #endregion
@@ -99,35 +101,35 @@ namespace PLCrashUtil.Core {
   }
   #region Enums
   /// <summary>
-  /// Legacy processor architecture type codes. These codes have been deprecated.
+  /// Legacy processor architecture type codes. These codes have been deprecated. 
   /// </summary>
   public enum Architecture {
     /// <summary>
-    /// x86
+    /// x86 
     /// </summary>
     [pbr::OriginalName("X86_32")] X8632 = 0,
     /// <summary>
-    /// x86-64
+    /// x86-64 
     /// </summary>
     [pbr::OriginalName("X86_64")] X8664 = 1,
     /// <summary>
-    /// ARMv6
+    /// ARMv6 
     /// </summary>
     [pbr::OriginalName("ARMV6")] Armv6 = 2,
     /// <summary>
-    /// PPC
+    /// PPC 
     /// </summary>
     [pbr::OriginalName("PPC")] Ppc = 3,
     /// <summary>
-    /// PPC64
+    ///* PPC64 
     /// </summary>
     [pbr::OriginalName("PPC64")] Ppc64 = 4,
     /// <summary>
-    /// ARMv7
+    /// ARMv7 
     /// </summary>
     [pbr::OriginalName("ARMV7")] Armv7 = 5,
     /// <summary>
-    /// Unknown processor type.
+    /// Unknown processor type. 
     /// </summary>
     [pbr::OriginalName("ARCHITECTURE_UNKNOWN")] Unknown = 6,
   }
@@ -136,7 +138,7 @@ namespace PLCrashUtil.Core {
 
   #region Messages
   /// <summary>
-  /// A crash report
+  /// A crash report 
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
   public sealed partial class CrashReport : pb::IMessage<CrashReport>
@@ -153,7 +155,7 @@ namespace PLCrashUtil.Core {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static pbr::MessageDescriptor Descriptor {
-      get { return global::PLCrashUtil.Core.PLCrashReportReflection.Descriptor.MessageTypes[0]; }
+      get { return global::Plcrash.PLCrashReportReflection.Descriptor.MessageTypes[0]; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -194,13 +196,13 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "system_info" field.</summary>
     public const int SystemInfoFieldNumber = 1;
-    private global::PLCrashUtil.Core.CrashReport.Types.SystemInfo systemInfo_;
+    private global::Plcrash.CrashReport.Types.SystemInfo systemInfo_;
     /// <summary>
-    /// Host system data
+    /// Host system data 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.SystemInfo SystemInfo {
+    public global::Plcrash.CrashReport.Types.SystemInfo SystemInfo {
       get { return systemInfo_; }
       set {
         systemInfo_ = value;
@@ -209,10 +211,10 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "application_info" field.</summary>
     public const int ApplicationInfoFieldNumber = 2;
-    private global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo applicationInfo_;
+    private global::Plcrash.CrashReport.Types.ApplicationInfo applicationInfo_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo ApplicationInfo {
+    public global::Plcrash.CrashReport.Types.ApplicationInfo ApplicationInfo {
       get { return applicationInfo_; }
       set {
         applicationInfo_ = value;
@@ -221,41 +223,41 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "threads" field.</summary>
     public const int ThreadsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::PLCrashUtil.Core.CrashReport.Types.Thread> _repeated_threads_codec
-        = pb::FieldCodec.ForMessage(26, global::PLCrashUtil.Core.CrashReport.Types.Thread.Parser);
-    private readonly pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread> threads_ = new pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread>();
+    private static readonly pb::FieldCodec<global::Plcrash.CrashReport.Types.Thread> _repeated_threads_codec
+        = pb::FieldCodec.ForMessage(26, global::Plcrash.CrashReport.Types.Thread.Parser);
+    private readonly pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread> threads_ = new pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread>();
     /// <summary>
-    /// All backtraces
+    /// All backtraces 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread> Threads {
+    public pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread> Threads {
       get { return threads_; }
     }
 
     /// <summary>Field number for the "binary_images" field.</summary>
     public const int BinaryImagesFieldNumber = 4;
-    private static readonly pb::FieldCodec<global::PLCrashUtil.Core.CrashReport.Types.BinaryImage> _repeated_binaryImages_codec
-        = pb::FieldCodec.ForMessage(34, global::PLCrashUtil.Core.CrashReport.Types.BinaryImage.Parser);
-    private readonly pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.BinaryImage> binaryImages_ = new pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.BinaryImage>();
+    private static readonly pb::FieldCodec<global::Plcrash.CrashReport.Types.BinaryImage> _repeated_binaryImages_codec
+        = pb::FieldCodec.ForMessage(34, global::Plcrash.CrashReport.Types.BinaryImage.Parser);
+    private readonly pbc::RepeatedField<global::Plcrash.CrashReport.Types.BinaryImage> binaryImages_ = new pbc::RepeatedField<global::Plcrash.CrashReport.Types.BinaryImage>();
     /// <summary>
-    /// All loaded binary images
+    /// All loaded binary images 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.BinaryImage> BinaryImages {
+    public pbc::RepeatedField<global::Plcrash.CrashReport.Types.BinaryImage> BinaryImages {
       get { return binaryImages_; }
     }
 
     /// <summary>Field number for the "exception" field.</summary>
     public const int ExceptionFieldNumber = 5;
-    private global::PLCrashUtil.Core.CrashReport.Types.Exception exception_;
+    private global::Plcrash.CrashReport.Types.Exception exception_;
     /// <summary>
-    /// The exception that triggered the crash (if any)
+    /// The exception that triggered the crash (if any) 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.Exception Exception {
+    public global::Plcrash.CrashReport.Types.Exception Exception {
       get { return exception_; }
       set {
         exception_ = value;
@@ -264,13 +266,13 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "signal" field.</summary>
     public const int SignalFieldNumber = 6;
-    private global::PLCrashUtil.Core.CrashReport.Types.Signal signal_;
+    private global::Plcrash.CrashReport.Types.Signal signal_;
     /// <summary>
-    /// The signal that triggered the crash
+    /// The signal that triggered the crash 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.Signal Signal {
+    public global::Plcrash.CrashReport.Types.Signal Signal {
       get { return signal_; }
       set {
         signal_ = value;
@@ -279,13 +281,13 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "process_info" field.</summary>
     public const int ProcessInfoFieldNumber = 7;
-    private global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo processInfo_;
+    private global::Plcrash.CrashReport.Types.ProcessInfo processInfo_;
     /// <summary>
-    /// The process info.
+    /// The process info. Required for all v1.1+ crash reports. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo ProcessInfo {
+    public global::Plcrash.CrashReport.Types.ProcessInfo ProcessInfo {
       get { return processInfo_; }
       set {
         processInfo_ = value;
@@ -294,13 +296,14 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "machine_info" field.</summary>
     public const int MachineInfoFieldNumber = 8;
-    private global::PLCrashUtil.Core.CrashReport.Types.MachineInfo machineInfo_;
+    private global::Plcrash.CrashReport.Types.MachineInfo machineInfo_;
     /// <summary>
-    /// Host architecture information.
+    /// Host architecture information. Required for all v1.1+ crash reports. If unavailable, the information
+    /// should be derived from the deprecated SystemInfo.architecture field. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.MachineInfo MachineInfo {
+    public global::Plcrash.CrashReport.Types.MachineInfo MachineInfo {
       get { return machineInfo_; }
       set {
         machineInfo_ = value;
@@ -309,13 +312,13 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "report_info" field.</summary>
     public const int ReportInfoFieldNumber = 9;
-    private global::PLCrashUtil.Core.CrashReport.Types.ReportInfo reportInfo_;
+    private global::Plcrash.CrashReport.Types.ReportInfo reportInfo_;
     /// <summary>
-    /// Report format information.
+    /// Report format information. Required for all v1.1+ crash reports. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::PLCrashUtil.Core.CrashReport.Types.ReportInfo ReportInfo {
+    public global::Plcrash.CrashReport.Types.ReportInfo ReportInfo {
       get { return reportInfo_; }
       set {
         reportInfo_ = value;
@@ -324,17 +327,31 @@ namespace PLCrashUtil.Core {
 
     /// <summary>Field number for the "custom_data" field.</summary>
     public const int CustomDataFieldNumber = 10;
-    private pb::ByteString customData_ = pb::ByteString.Empty;
+    private readonly static pb::ByteString CustomDataDefaultValue = pb::ByteString.Empty;
+
+    private pb::ByteString customData_;
     /// <summary>
-    /// Custom data. Can be used by user to store contextual information for the crash.
+    /// Custom data. Can be used by user to store contextual information for the crash. 
     /// </summary>
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public pb::ByteString CustomData {
-      get { return customData_; }
+      get { return customData_ ?? CustomDataDefaultValue; }
       set {
         customData_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
       }
+    }
+    /// <summary>Gets whether the "custom_data" field is set</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool HasCustomData {
+      get { return customData_ != null; }
+    }
+    /// <summary>Clears the value of the "custom_data" field</summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void ClearCustomData() {
+      customData_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -378,7 +395,7 @@ namespace PLCrashUtil.Core {
       if (processInfo_ != null) hash ^= ProcessInfo.GetHashCode();
       if (machineInfo_ != null) hash ^= MachineInfo.GetHashCode();
       if (reportInfo_ != null) hash ^= ReportInfo.GetHashCode();
-      if (CustomData.Length != 0) hash ^= CustomData.GetHashCode();
+      if (HasCustomData) hash ^= CustomData.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -427,7 +444,7 @@ namespace PLCrashUtil.Core {
         output.WriteRawTag(74);
         output.WriteMessage(ReportInfo);
       }
-      if (CustomData.Length != 0) {
+      if (HasCustomData) {
         output.WriteRawTag(82);
         output.WriteBytes(CustomData);
       }
@@ -471,7 +488,7 @@ namespace PLCrashUtil.Core {
         output.WriteRawTag(74);
         output.WriteMessage(ReportInfo);
       }
-      if (CustomData.Length != 0) {
+      if (HasCustomData) {
         output.WriteRawTag(82);
         output.WriteBytes(CustomData);
       }
@@ -508,7 +525,7 @@ namespace PLCrashUtil.Core {
       if (reportInfo_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(ReportInfo);
       }
-      if (CustomData.Length != 0) {
+      if (HasCustomData) {
         size += 1 + pb::CodedOutputStream.ComputeBytesSize(CustomData);
       }
       if (_unknownFields != null) {
@@ -525,13 +542,13 @@ namespace PLCrashUtil.Core {
       }
       if (other.systemInfo_ != null) {
         if (systemInfo_ == null) {
-          SystemInfo = new global::PLCrashUtil.Core.CrashReport.Types.SystemInfo();
+          SystemInfo = new global::Plcrash.CrashReport.Types.SystemInfo();
         }
         SystemInfo.MergeFrom(other.SystemInfo);
       }
       if (other.applicationInfo_ != null) {
         if (applicationInfo_ == null) {
-          ApplicationInfo = new global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo();
+          ApplicationInfo = new global::Plcrash.CrashReport.Types.ApplicationInfo();
         }
         ApplicationInfo.MergeFrom(other.ApplicationInfo);
       }
@@ -539,35 +556,35 @@ namespace PLCrashUtil.Core {
       binaryImages_.Add(other.binaryImages_);
       if (other.exception_ != null) {
         if (exception_ == null) {
-          Exception = new global::PLCrashUtil.Core.CrashReport.Types.Exception();
+          Exception = new global::Plcrash.CrashReport.Types.Exception();
         }
         Exception.MergeFrom(other.Exception);
       }
       if (other.signal_ != null) {
         if (signal_ == null) {
-          Signal = new global::PLCrashUtil.Core.CrashReport.Types.Signal();
+          Signal = new global::Plcrash.CrashReport.Types.Signal();
         }
         Signal.MergeFrom(other.Signal);
       }
       if (other.processInfo_ != null) {
         if (processInfo_ == null) {
-          ProcessInfo = new global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo();
+          ProcessInfo = new global::Plcrash.CrashReport.Types.ProcessInfo();
         }
         ProcessInfo.MergeFrom(other.ProcessInfo);
       }
       if (other.machineInfo_ != null) {
         if (machineInfo_ == null) {
-          MachineInfo = new global::PLCrashUtil.Core.CrashReport.Types.MachineInfo();
+          MachineInfo = new global::Plcrash.CrashReport.Types.MachineInfo();
         }
         MachineInfo.MergeFrom(other.MachineInfo);
       }
       if (other.reportInfo_ != null) {
         if (reportInfo_ == null) {
-          ReportInfo = new global::PLCrashUtil.Core.CrashReport.Types.ReportInfo();
+          ReportInfo = new global::Plcrash.CrashReport.Types.ReportInfo();
         }
         ReportInfo.MergeFrom(other.ReportInfo);
       }
-      if (other.CustomData.Length != 0) {
+      if (other.HasCustomData) {
         CustomData = other.CustomData;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -591,14 +608,14 @@ namespace PLCrashUtil.Core {
             break;
           case 10: {
             if (systemInfo_ == null) {
-              SystemInfo = new global::PLCrashUtil.Core.CrashReport.Types.SystemInfo();
+              SystemInfo = new global::Plcrash.CrashReport.Types.SystemInfo();
             }
             input.ReadMessage(SystemInfo);
             break;
           }
           case 18: {
             if (applicationInfo_ == null) {
-              ApplicationInfo = new global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo();
+              ApplicationInfo = new global::Plcrash.CrashReport.Types.ApplicationInfo();
             }
             input.ReadMessage(ApplicationInfo);
             break;
@@ -613,35 +630,35 @@ namespace PLCrashUtil.Core {
           }
           case 42: {
             if (exception_ == null) {
-              Exception = new global::PLCrashUtil.Core.CrashReport.Types.Exception();
+              Exception = new global::Plcrash.CrashReport.Types.Exception();
             }
             input.ReadMessage(Exception);
             break;
           }
           case 50: {
             if (signal_ == null) {
-              Signal = new global::PLCrashUtil.Core.CrashReport.Types.Signal();
+              Signal = new global::Plcrash.CrashReport.Types.Signal();
             }
             input.ReadMessage(Signal);
             break;
           }
           case 58: {
             if (processInfo_ == null) {
-              ProcessInfo = new global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo();
+              ProcessInfo = new global::Plcrash.CrashReport.Types.ProcessInfo();
             }
             input.ReadMessage(ProcessInfo);
             break;
           }
           case 66: {
             if (machineInfo_ == null) {
-              MachineInfo = new global::PLCrashUtil.Core.CrashReport.Types.MachineInfo();
+              MachineInfo = new global::Plcrash.CrashReport.Types.MachineInfo();
             }
             input.ReadMessage(MachineInfo);
             break;
           }
           case 74: {
             if (reportInfo_ == null) {
-              ReportInfo = new global::PLCrashUtil.Core.CrashReport.Types.ReportInfo();
+              ReportInfo = new global::Plcrash.CrashReport.Types.ReportInfo();
             }
             input.ReadMessage(ReportInfo);
             break;
@@ -671,14 +688,14 @@ namespace PLCrashUtil.Core {
             break;
           case 10: {
             if (systemInfo_ == null) {
-              SystemInfo = new global::PLCrashUtil.Core.CrashReport.Types.SystemInfo();
+              SystemInfo = new global::Plcrash.CrashReport.Types.SystemInfo();
             }
             input.ReadMessage(SystemInfo);
             break;
           }
           case 18: {
             if (applicationInfo_ == null) {
-              ApplicationInfo = new global::PLCrashUtil.Core.CrashReport.Types.ApplicationInfo();
+              ApplicationInfo = new global::Plcrash.CrashReport.Types.ApplicationInfo();
             }
             input.ReadMessage(ApplicationInfo);
             break;
@@ -693,35 +710,35 @@ namespace PLCrashUtil.Core {
           }
           case 42: {
             if (exception_ == null) {
-              Exception = new global::PLCrashUtil.Core.CrashReport.Types.Exception();
+              Exception = new global::Plcrash.CrashReport.Types.Exception();
             }
             input.ReadMessage(Exception);
             break;
           }
           case 50: {
             if (signal_ == null) {
-              Signal = new global::PLCrashUtil.Core.CrashReport.Types.Signal();
+              Signal = new global::Plcrash.CrashReport.Types.Signal();
             }
             input.ReadMessage(Signal);
             break;
           }
           case 58: {
             if (processInfo_ == null) {
-              ProcessInfo = new global::PLCrashUtil.Core.CrashReport.Types.ProcessInfo();
+              ProcessInfo = new global::Plcrash.CrashReport.Types.ProcessInfo();
             }
             input.ReadMessage(ProcessInfo);
             break;
           }
           case 66: {
             if (machineInfo_ == null) {
-              MachineInfo = new global::PLCrashUtil.Core.CrashReport.Types.MachineInfo();
+              MachineInfo = new global::Plcrash.CrashReport.Types.MachineInfo();
             }
             input.ReadMessage(MachineInfo);
             break;
           }
           case 74: {
             if (reportInfo_ == null) {
-              ReportInfo = new global::PLCrashUtil.Core.CrashReport.Types.ReportInfo();
+              ReportInfo = new global::Plcrash.CrashReport.Types.ReportInfo();
             }
             input.ReadMessage(ReportInfo);
             break;
@@ -741,6 +758,7 @@ namespace PLCrashUtil.Core {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public static partial class Types {
       /// <summary>
+      ///
       /// Processor information
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -751,6 +769,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<Processor> _parser = new pb::MessageParser<Processor>(() => new Processor());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Processor> Parser { get { return _parser; } }
@@ -758,7 +777,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[0]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[0]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -778,6 +797,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Processor(Processor other) : this() {
+          _hasBits0 = other._hasBits0;
           encoding_ = other.encoding_;
           type_ = other.type_;
           subtype_ = other.subtype_;
@@ -792,47 +812,92 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "encoding" field.</summary>
         public const int EncodingFieldNumber = 1;
-        private global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding encoding_ = global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown;
+        private readonly static global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding EncodingDefaultValue = global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding.Unknown;
+
+        private global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding encoding_;
         /// <summary>
-        /// The CPU type encoding that should be used to interpret cpu_type and cpu_subtype.
+        ///* The CPU type encoding that should be used to interpret cpu_type and cpu_subtype. This value is required. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding Encoding {
-          get { return encoding_; }
+        public global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding Encoding {
+          get { if ((_hasBits0 & 1) != 0) { return encoding_; } else { return EncodingDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             encoding_ = value;
           }
+        }
+        /// <summary>Gets whether the "encoding" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasEncoding {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "encoding" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearEncoding() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "type" field.</summary>
         public const int TypeFieldNumber = 2;
+        private readonly static ulong TypeDefaultValue = 0UL;
+
         private ulong type_;
         /// <summary>
-        /// The CPU type.
+        ///* The CPU type. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong Type {
-          get { return type_; }
+          get { if ((_hasBits0 & 2) != 0) { return type_; } else { return TypeDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             type_ = value;
           }
+        }
+        /// <summary>Gets whether the "type" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasType {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "type" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearType() {
+          _hasBits0 &= ~2;
         }
 
         /// <summary>Field number for the "subtype" field.</summary>
         public const int SubtypeFieldNumber = 3;
+        private readonly static ulong SubtypeDefaultValue = 0UL;
+
         private ulong subtype_;
         /// <summary>
-        /// The CPU subtype.
+        ///* The CPU subtype. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong Subtype {
-          get { return subtype_; }
+          get { if ((_hasBits0 & 4) != 0) { return subtype_; } else { return SubtypeDefaultValue; } }
           set {
+            _hasBits0 |= 4;
             subtype_ = value;
           }
+        }
+        /// <summary>Gets whether the "subtype" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasSubtype {
+          get { return (_hasBits0 & 4) != 0; }
+        }
+        /// <summary>Clears the value of the "subtype" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearSubtype() {
+          _hasBits0 &= ~4;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -860,9 +925,9 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Encoding != global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown) hash ^= Encoding.GetHashCode();
-          if (Type != 0UL) hash ^= Type.GetHashCode();
-          if (Subtype != 0UL) hash ^= Subtype.GetHashCode();
+          if (HasEncoding) hash ^= Encoding.GetHashCode();
+          if (HasType) hash ^= Type.GetHashCode();
+          if (HasSubtype) hash ^= Subtype.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -881,15 +946,15 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Encoding != global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown) {
+          if (HasEncoding) {
             output.WriteRawTag(8);
             output.WriteEnum((int) Encoding);
           }
-          if (Type != 0UL) {
+          if (HasType) {
             output.WriteRawTag(16);
             output.WriteUInt64(Type);
           }
-          if (Subtype != 0UL) {
+          if (HasSubtype) {
             output.WriteRawTag(24);
             output.WriteUInt64(Subtype);
           }
@@ -903,15 +968,15 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Encoding != global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown) {
+          if (HasEncoding) {
             output.WriteRawTag(8);
             output.WriteEnum((int) Encoding);
           }
-          if (Type != 0UL) {
+          if (HasType) {
             output.WriteRawTag(16);
             output.WriteUInt64(Type);
           }
-          if (Subtype != 0UL) {
+          if (HasSubtype) {
             output.WriteRawTag(24);
             output.WriteUInt64(Subtype);
           }
@@ -925,13 +990,13 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Encoding != global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown) {
+          if (HasEncoding) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Encoding);
           }
-          if (Type != 0UL) {
+          if (HasType) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Type);
           }
-          if (Subtype != 0UL) {
+          if (HasSubtype) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Subtype);
           }
           if (_unknownFields != null) {
@@ -946,13 +1011,13 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Encoding != global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding.Unknown) {
+          if (other.HasEncoding) {
             Encoding = other.Encoding;
           }
-          if (other.Type != 0UL) {
+          if (other.HasType) {
             Type = other.Type;
           }
-          if (other.Subtype != 0UL) {
+          if (other.HasSubtype) {
             Subtype = other.Subtype;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -975,7 +1040,7 @@ namespace PLCrashUtil.Core {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 8: {
-                Encoding = (global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding) input.ReadEnum();
+                Encoding = (global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -1006,7 +1071,7 @@ namespace PLCrashUtil.Core {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                Encoding = (global::PLCrashUtil.Core.CrashReport.Types.Processor.Types.TypeEncoding) input.ReadEnum();
+                Encoding = (global::Plcrash.CrashReport.Types.Processor.Types.TypeEncoding) input.ReadEnum();
                 break;
               }
               case 16: {
@@ -1028,15 +1093,25 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
+          /// 
           /// CPU Type Encodings
+          ///
+          /// The wire format maintains support for multiple CPU type encodings; it is expected that different operating
+          /// systems may target different processors, and the reported CPU type and subtype information may not be
+          /// easily or directly expressed when not using the vendor's own defined types.
+          ///
+          /// Currently, only Apple Mach CPU type/subtype information is supported by the wire protocol. These types are
+          /// stable, intended to be encoded in Mach-O files, and are defined in mach/machine.h on Mac OS X.
+          ///
+          /// Implementations must gracefully handle the addition of unknown type encodings.
           /// </summary>
           public enum TypeEncoding {
             /// <summary>
-            /// Unknown processor type encoding.
+            /// Unknown processor type encoding. 
             /// </summary>
             [pbr::OriginalName("TYPE_ENCODING_UNKNOWN")] Unknown = 0,
             /// <summary>
-            /// Apple Mach-defined processor types.
+            /// Apple Mach-defined processor types. 
             /// </summary>
             [pbr::OriginalName("TYPE_ENCODING_MACH")] Mach = 1,
           }
@@ -1054,6 +1129,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<SystemInfo> _parser = new pb::MessageParser<SystemInfo>(() => new SystemInfo());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<SystemInfo> Parser { get { return _parser; } }
@@ -1061,7 +1137,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[1]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[1]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1081,6 +1157,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public SystemInfo(SystemInfo other) : this() {
+          _hasBits0 = other._hasBits0;
           operatingSystem_ = other.operatingSystem_;
           osVersion_ = other.osVersion_;
           architecture_ = other.architecture_;
@@ -1097,77 +1174,151 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "operating_system" field.</summary>
         public const int OperatingSystemFieldNumber = 1;
-        private global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem operatingSystem_ = global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX;
+        private readonly static global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem OperatingSystemDefaultValue = global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem.OsUnknown;
+
+        private global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem operatingSystem_;
         /// <summary>
-        /// Operating system
+        /// Operating system 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem OperatingSystem {
-          get { return operatingSystem_; }
+        public global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem OperatingSystem {
+          get { if ((_hasBits0 & 1) != 0) { return operatingSystem_; } else { return OperatingSystemDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             operatingSystem_ = value;
           }
+        }
+        /// <summary>Gets whether the "operating_system" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasOperatingSystem {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "operating_system" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearOperatingSystem() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "os_version" field.</summary>
         public const int OsVersionFieldNumber = 2;
-        private string osVersion_ = "";
+        private readonly static string OsVersionDefaultValue = "";
+
+        private string osVersion_;
         /// <summary>
-        /// OS version
+        /// OS version 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string OsVersion {
-          get { return osVersion_; }
+          get { return osVersion_ ?? OsVersionDefaultValue; }
           set {
             osVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "os_version" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasOsVersion {
+          get { return osVersion_ != null; }
+        }
+        /// <summary>Clears the value of the "os_version" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearOsVersion() {
+          osVersion_ = null;
+        }
 
         /// <summary>Field number for the "architecture" field.</summary>
         public const int ArchitectureFieldNumber = 3;
-        private global::PLCrashUtil.Core.Architecture architecture_ = global::PLCrashUtil.Core.Architecture.X8632;
+        private readonly static global::Plcrash.Architecture ArchitectureDefaultValue = global::Plcrash.Architecture.Unknown;
+
+        private global::Plcrash.Architecture architecture_;
         /// <summary>
-        /// Processor architecture (deprecated in favor of machine_info)
+        /// Processor architecture (deprecated in favor of machine_info) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.Architecture Architecture {
-          get { return architecture_; }
+        public global::Plcrash.Architecture Architecture {
+          get { if ((_hasBits0 & 2) != 0) { return architecture_; } else { return ArchitectureDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             architecture_ = value;
           }
+        }
+        /// <summary>Gets whether the "architecture" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasArchitecture {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "architecture" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearArchitecture() {
+          _hasBits0 &= ~2;
         }
 
         /// <summary>Field number for the "timestamp" field.</summary>
         public const int TimestampFieldNumber = 4;
+        private readonly static long TimestampDefaultValue = 0L;
+
         private long timestamp_;
         /// <summary>
-        /// Date crash report was generated (as seconds since epoch)
+        /// Date crash report was generated (as seconds since epoch). 0 if the time
+        /// is unknown or can not be determined. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public long Timestamp {
-          get { return timestamp_; }
+          get { if ((_hasBits0 & 4) != 0) { return timestamp_; } else { return TimestampDefaultValue; } }
           set {
+            _hasBits0 |= 4;
             timestamp_ = value;
           }
+        }
+        /// <summary>Gets whether the "timestamp" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasTimestamp {
+          get { return (_hasBits0 & 4) != 0; }
+        }
+        /// <summary>Clears the value of the "timestamp" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearTimestamp() {
+          _hasBits0 &= ~4;
         }
 
         /// <summary>Field number for the "os_build" field.</summary>
         public const int OsBuildFieldNumber = 5;
-        private string osBuild_ = "";
+        private readonly static string OsBuildDefaultValue = "";
+
+        private string osBuild_;
         /// <summary>
-        /// OS build number (eg, 10J869)
+        /// OS build number (eg, 10J869) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string OsBuild {
-          get { return osBuild_; }
+          get { return osBuild_ ?? OsBuildDefaultValue; }
           set {
             osBuild_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
+        }
+        /// <summary>Gets whether the "os_build" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasOsBuild {
+          get { return osBuild_ != null; }
+        }
+        /// <summary>Clears the value of the "os_build" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearOsBuild() {
+          osBuild_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1197,11 +1348,11 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (OperatingSystem != global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX) hash ^= OperatingSystem.GetHashCode();
-          if (OsVersion.Length != 0) hash ^= OsVersion.GetHashCode();
-          if (Architecture != global::PLCrashUtil.Core.Architecture.X8632) hash ^= Architecture.GetHashCode();
-          if (Timestamp != 0L) hash ^= Timestamp.GetHashCode();
-          if (OsBuild.Length != 0) hash ^= OsBuild.GetHashCode();
+          if (HasOperatingSystem) hash ^= OperatingSystem.GetHashCode();
+          if (HasOsVersion) hash ^= OsVersion.GetHashCode();
+          if (HasArchitecture) hash ^= Architecture.GetHashCode();
+          if (HasTimestamp) hash ^= Timestamp.GetHashCode();
+          if (HasOsBuild) hash ^= OsBuild.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1220,23 +1371,23 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (OperatingSystem != global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX) {
+          if (HasOperatingSystem) {
             output.WriteRawTag(8);
             output.WriteEnum((int) OperatingSystem);
           }
-          if (OsVersion.Length != 0) {
+          if (HasOsVersion) {
             output.WriteRawTag(18);
             output.WriteString(OsVersion);
           }
-          if (Architecture != global::PLCrashUtil.Core.Architecture.X8632) {
+          if (HasArchitecture) {
             output.WriteRawTag(24);
             output.WriteEnum((int) Architecture);
           }
-          if (Timestamp != 0L) {
+          if (HasTimestamp) {
             output.WriteRawTag(32);
             output.WriteInt64(Timestamp);
           }
-          if (OsBuild.Length != 0) {
+          if (HasOsBuild) {
             output.WriteRawTag(42);
             output.WriteString(OsBuild);
           }
@@ -1250,23 +1401,23 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (OperatingSystem != global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX) {
+          if (HasOperatingSystem) {
             output.WriteRawTag(8);
             output.WriteEnum((int) OperatingSystem);
           }
-          if (OsVersion.Length != 0) {
+          if (HasOsVersion) {
             output.WriteRawTag(18);
             output.WriteString(OsVersion);
           }
-          if (Architecture != global::PLCrashUtil.Core.Architecture.X8632) {
+          if (HasArchitecture) {
             output.WriteRawTag(24);
             output.WriteEnum((int) Architecture);
           }
-          if (Timestamp != 0L) {
+          if (HasTimestamp) {
             output.WriteRawTag(32);
             output.WriteInt64(Timestamp);
           }
-          if (OsBuild.Length != 0) {
+          if (HasOsBuild) {
             output.WriteRawTag(42);
             output.WriteString(OsBuild);
           }
@@ -1280,19 +1431,19 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (OperatingSystem != global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX) {
+          if (HasOperatingSystem) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) OperatingSystem);
           }
-          if (OsVersion.Length != 0) {
+          if (HasOsVersion) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(OsVersion);
           }
-          if (Architecture != global::PLCrashUtil.Core.Architecture.X8632) {
+          if (HasArchitecture) {
             size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Architecture);
           }
-          if (Timestamp != 0L) {
+          if (HasTimestamp) {
             size += 1 + pb::CodedOutputStream.ComputeInt64Size(Timestamp);
           }
-          if (OsBuild.Length != 0) {
+          if (HasOsBuild) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(OsBuild);
           }
           if (_unknownFields != null) {
@@ -1307,19 +1458,19 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.OperatingSystem != global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem.MacOsX) {
+          if (other.HasOperatingSystem) {
             OperatingSystem = other.OperatingSystem;
           }
-          if (other.OsVersion.Length != 0) {
+          if (other.HasOsVersion) {
             OsVersion = other.OsVersion;
           }
-          if (other.Architecture != global::PLCrashUtil.Core.Architecture.X8632) {
+          if (other.HasArchitecture) {
             Architecture = other.Architecture;
           }
-          if (other.Timestamp != 0L) {
+          if (other.HasTimestamp) {
             Timestamp = other.Timestamp;
           }
-          if (other.OsBuild.Length != 0) {
+          if (other.HasOsBuild) {
             OsBuild = other.OsBuild;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1342,7 +1493,7 @@ namespace PLCrashUtil.Core {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
                 break;
               case 8: {
-                OperatingSystem = (global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem) input.ReadEnum();
+                OperatingSystem = (global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -1350,7 +1501,7 @@ namespace PLCrashUtil.Core {
                 break;
               }
               case 24: {
-                Architecture = (global::PLCrashUtil.Core.Architecture) input.ReadEnum();
+                Architecture = (global::Plcrash.Architecture) input.ReadEnum();
                 break;
               }
               case 32: {
@@ -1381,7 +1532,7 @@ namespace PLCrashUtil.Core {
                 _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
                 break;
               case 8: {
-                OperatingSystem = (global::PLCrashUtil.Core.CrashReport.Types.SystemInfo.Types.OperatingSystem) input.ReadEnum();
+                OperatingSystem = (global::Plcrash.CrashReport.Types.SystemInfo.Types.OperatingSystem) input.ReadEnum();
                 break;
               }
               case 18: {
@@ -1389,7 +1540,7 @@ namespace PLCrashUtil.Core {
                 break;
               }
               case 24: {
-                Architecture = (global::PLCrashUtil.Core.Architecture) input.ReadEnum();
+                Architecture = (global::Plcrash.Architecture) input.ReadEnum();
                 break;
               }
               case 32: {
@@ -1411,29 +1562,29 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
-          /// Known operating system types
+          /// Known operating system types 
           /// </summary>
           public enum OperatingSystem {
             /// <summary>
-            /// Mac OS X
+            /// Mac OS X 
             /// </summary>
             [pbr::OriginalName("MAC_OS_X")] MacOsX = 0,
             /// <summary>
-            /// iPhone OS
+            /// iPhone OS 
             /// </summary>
             [pbr::OriginalName("IPHONE_OS")] IphoneOs = 1,
             /// <summary>
-            /// iPhone Simulator (Mac OS X w/ simulator runtime environment)
+            /// iPhone Simulator (Mac OS X w/ simulator runtime environment) 
             /// </summary>
             [pbr::OriginalName("IPHONE_SIMULATOR")] IphoneSimulator = 2,
             /// <summary>
-            /// Unknown operating system.
-            /// </summary>
-            [pbr::OriginalName("OS_UNKNOWN")] OsUnknown = 3,
-            /// <summary>
-            /// Apple tvOS
+            /// Apple tvOS 
             /// </summary>
             [pbr::OriginalName("APPLE_TVOS")] AppleTvos = 4,
+            /// <summary>
+            /// Unknown operating system. 
+            /// </summary>
+            [pbr::OriginalName("OS_UNKNOWN")] OsUnknown = 3,
           }
 
         }
@@ -1442,7 +1593,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Application info
+      /// Application info 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class ApplicationInfo : pb::IMessage<ApplicationInfo>
@@ -1459,7 +1610,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[2]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[2]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1493,47 +1644,89 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "identifier" field.</summary>
         public const int IdentifierFieldNumber = 1;
-        private string identifier_ = "";
+        private readonly static string IdentifierDefaultValue = "";
+
+        private string identifier_;
         /// <summary>
-        /// Unique application identifier
+        /// Unique application identifier 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Identifier {
-          get { return identifier_; }
+          get { return identifier_ ?? IdentifierDefaultValue; }
           set {
             identifier_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "identifier" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasIdentifier {
+          get { return identifier_ != null; }
+        }
+        /// <summary>Clears the value of the "identifier" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearIdentifier() {
+          identifier_ = null;
+        }
 
         /// <summary>Field number for the "version" field.</summary>
         public const int VersionFieldNumber = 2;
-        private string version_ = "";
+        private readonly static string VersionDefaultValue = "";
+
+        private string version_;
         /// <summary>
-        /// Application version string
+        /// Application version string 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Version {
-          get { return version_; }
+          get { return version_ ?? VersionDefaultValue; }
           set {
             version_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "version" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasVersion {
+          get { return version_ != null; }
+        }
+        /// <summary>Clears the value of the "version" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearVersion() {
+          version_ = null;
+        }
 
         /// <summary>Field number for the "marketing_version" field.</summary>
         public const int MarketingVersionFieldNumber = 3;
-        private string marketingVersion_ = "";
+        private readonly static string MarketingVersionDefaultValue = "";
+
+        private string marketingVersion_;
         /// <summary>
-        /// Application marketing version string
+        /// Application marketing version string 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string MarketingVersion {
-          get { return marketingVersion_; }
+          get { return marketingVersion_ ?? MarketingVersionDefaultValue; }
           set {
             marketingVersion_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
+        }
+        /// <summary>Gets whether the "marketing_version" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasMarketingVersion {
+          get { return marketingVersion_ != null; }
+        }
+        /// <summary>Clears the value of the "marketing_version" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearMarketingVersion() {
+          marketingVersion_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1561,9 +1754,9 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Identifier.Length != 0) hash ^= Identifier.GetHashCode();
-          if (Version.Length != 0) hash ^= Version.GetHashCode();
-          if (MarketingVersion.Length != 0) hash ^= MarketingVersion.GetHashCode();
+          if (HasIdentifier) hash ^= Identifier.GetHashCode();
+          if (HasVersion) hash ^= Version.GetHashCode();
+          if (HasMarketingVersion) hash ^= MarketingVersion.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1582,15 +1775,15 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Identifier.Length != 0) {
+          if (HasIdentifier) {
             output.WriteRawTag(10);
             output.WriteString(Identifier);
           }
-          if (Version.Length != 0) {
+          if (HasVersion) {
             output.WriteRawTag(18);
             output.WriteString(Version);
           }
-          if (MarketingVersion.Length != 0) {
+          if (HasMarketingVersion) {
             output.WriteRawTag(26);
             output.WriteString(MarketingVersion);
           }
@@ -1604,15 +1797,15 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Identifier.Length != 0) {
+          if (HasIdentifier) {
             output.WriteRawTag(10);
             output.WriteString(Identifier);
           }
-          if (Version.Length != 0) {
+          if (HasVersion) {
             output.WriteRawTag(18);
             output.WriteString(Version);
           }
-          if (MarketingVersion.Length != 0) {
+          if (HasMarketingVersion) {
             output.WriteRawTag(26);
             output.WriteString(MarketingVersion);
           }
@@ -1626,13 +1819,13 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Identifier.Length != 0) {
+          if (HasIdentifier) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Identifier);
           }
-          if (Version.Length != 0) {
+          if (HasVersion) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Version);
           }
-          if (MarketingVersion.Length != 0) {
+          if (HasMarketingVersion) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(MarketingVersion);
           }
           if (_unknownFields != null) {
@@ -1647,13 +1840,13 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Identifier.Length != 0) {
+          if (other.HasIdentifier) {
             Identifier = other.Identifier;
           }
-          if (other.Version.Length != 0) {
+          if (other.HasVersion) {
             Version = other.Version;
           }
-          if (other.MarketingVersion.Length != 0) {
+          if (other.HasMarketingVersion) {
             MarketingVersion = other.MarketingVersion;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -1726,7 +1919,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// A symbol table entry.
+      /// A symbol table entry. 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class Symbol : pb::IMessage<Symbol>
@@ -1736,6 +1929,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<Symbol> _parser = new pb::MessageParser<Symbol>(() => new Symbol());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Symbol> Parser { get { return _parser; } }
@@ -1743,7 +1937,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[3]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[3]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1763,6 +1957,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Symbol(Symbol other) : this() {
+          _hasBits0 = other._hasBits0;
           name_ = other.name_;
           startAddress_ = other.startAddress_;
           endAddress_ = other.endAddress_;
@@ -1777,47 +1972,93 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "name" field.</summary>
         public const int NameFieldNumber = 1;
-        private string name_ = "";
+        private readonly static string NameDefaultValue = "";
+
+        private string name_;
         /// <summary>
-        /// The symbol name
+        /// The symbol name 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
-          get { return name_; }
+          get { return name_ ?? NameDefaultValue; }
           set {
             name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasName {
+          get { return name_ != null; }
+        }
+        /// <summary>Clears the value of the "name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearName() {
+          name_ = null;
+        }
 
         /// <summary>Field number for the "start_address" field.</summary>
         public const int StartAddressFieldNumber = 2;
+        private readonly static ulong StartAddressDefaultValue = 0UL;
+
         private ulong startAddress_;
         /// <summary>
-        /// The symbol start address
+        /// The symbol start address 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong StartAddress {
-          get { return startAddress_; }
+          get { if ((_hasBits0 & 1) != 0) { return startAddress_; } else { return StartAddressDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             startAddress_ = value;
           }
+        }
+        /// <summary>Gets whether the "start_address" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasStartAddress {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "start_address" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearStartAddress() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "end_address" field.</summary>
         public const int EndAddressFieldNumber = 3;
+        private readonly static ulong EndAddressDefaultValue = 0UL;
+
         private ulong endAddress_;
         /// <summary>
-        /// The symbol end address, if explicitly defined.
+        /// The symbol end address, if explicitly defined. This will only be included if the end address is
+        /// explicitly defined (eg, by DWARF debugging information), will not be derived by best-guess
+        /// heuristics. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong EndAddress {
-          get { return endAddress_; }
+          get { if ((_hasBits0 & 2) != 0) { return endAddress_; } else { return EndAddressDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             endAddress_ = value;
           }
+        }
+        /// <summary>Gets whether the "end_address" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasEndAddress {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "end_address" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearEndAddress() {
+          _hasBits0 &= ~2;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -1845,9 +2086,9 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (StartAddress != 0UL) hash ^= StartAddress.GetHashCode();
-          if (EndAddress != 0UL) hash ^= EndAddress.GetHashCode();
+          if (HasName) hash ^= Name.GetHashCode();
+          if (HasStartAddress) hash ^= StartAddress.GetHashCode();
+          if (HasEndAddress) hash ^= EndAddress.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -1866,15 +2107,15 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (StartAddress != 0UL) {
+          if (HasStartAddress) {
             output.WriteRawTag(16);
             output.WriteUInt64(StartAddress);
           }
-          if (EndAddress != 0UL) {
+          if (HasEndAddress) {
             output.WriteRawTag(24);
             output.WriteUInt64(EndAddress);
           }
@@ -1888,15 +2129,15 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (StartAddress != 0UL) {
+          if (HasStartAddress) {
             output.WriteRawTag(16);
             output.WriteUInt64(StartAddress);
           }
-          if (EndAddress != 0UL) {
+          if (HasEndAddress) {
             output.WriteRawTag(24);
             output.WriteUInt64(EndAddress);
           }
@@ -1910,13 +2151,13 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Name.Length != 0) {
+          if (HasName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
           }
-          if (StartAddress != 0UL) {
+          if (HasStartAddress) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(StartAddress);
           }
-          if (EndAddress != 0UL) {
+          if (HasEndAddress) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(EndAddress);
           }
           if (_unknownFields != null) {
@@ -1931,13 +2172,13 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Name.Length != 0) {
+          if (other.HasName) {
             Name = other.Name;
           }
-          if (other.StartAddress != 0UL) {
+          if (other.HasStartAddress) {
             StartAddress = other.StartAddress;
           }
-          if (other.EndAddress != 0UL) {
+          if (other.HasEndAddress) {
             EndAddress = other.EndAddress;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2010,7 +2251,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Thread state
+      /// Thread state 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class Thread : pb::IMessage<Thread>
@@ -2020,6 +2261,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<Thread> _parser = new pb::MessageParser<Thread>(() => new Thread());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Thread> Parser { get { return _parser; } }
@@ -2027,7 +2269,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[4]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[4]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2047,6 +2289,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Thread(Thread other) : this() {
+          _hasBits0 = other._hasBits0;
           threadNumber_ = other.threadNumber_;
           frames_ = other.frames_.Clone();
           crashed_ = other.crashed_;
@@ -2062,59 +2305,90 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "thread_number" field.</summary>
         public const int ThreadNumberFieldNumber = 1;
+        private readonly static uint ThreadNumberDefaultValue = 0;
+
         private uint threadNumber_;
         /// <summary>
-        /// Thread number (indexed at 0, must be unique within a crash report)
+        /// Thread number (indexed at 0, must be unique within a crash report) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint ThreadNumber {
-          get { return threadNumber_; }
+          get { if ((_hasBits0 & 1) != 0) { return threadNumber_; } else { return ThreadNumberDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             threadNumber_ = value;
           }
+        }
+        /// <summary>Gets whether the "thread_number" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasThreadNumber {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "thread_number" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearThreadNumber() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "frames" field.</summary>
         public const int FramesFieldNumber = 2;
-        private static readonly pb::FieldCodec<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> _repeated_frames_codec
-            = pb::FieldCodec.ForMessage(18, global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame.Parser);
-        private readonly pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> frames_ = new pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame>();
+        private static readonly pb::FieldCodec<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> _repeated_frames_codec
+            = pb::FieldCodec.ForMessage(18, global::Plcrash.CrashReport.Types.Thread.Types.StackFrame.Parser);
+        private readonly pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> frames_ = new pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame>();
         /// <summary>
-        /// Backtrace stack frames
+        /// Backtrace stack frames 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> Frames {
+        public pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> Frames {
           get { return frames_; }
         }
 
         /// <summary>Field number for the "crashed" field.</summary>
         public const int CrashedFieldNumber = 3;
+        private readonly static bool CrashedDefaultValue = false;
+
         private bool crashed_;
         /// <summary>
-        /// True if this is the crashed thread
+        /// True if this is the crashed thread 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Crashed {
-          get { return crashed_; }
+          get { if ((_hasBits0 & 2) != 0) { return crashed_; } else { return CrashedDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             crashed_ = value;
           }
+        }
+        /// <summary>Gets whether the "crashed" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasCrashed {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "crashed" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearCrashed() {
+          _hasBits0 &= ~2;
         }
 
         /// <summary>Field number for the "registers" field.</summary>
         public const int RegistersFieldNumber = 4;
-        private static readonly pb::FieldCodec<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue> _repeated_registers_codec
-            = pb::FieldCodec.ForMessage(34, global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue.Parser);
-        private readonly pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue> registers_ = new pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue>();
+        private static readonly pb::FieldCodec<global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue> _repeated_registers_codec
+            = pb::FieldCodec.ForMessage(34, global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue.Parser);
+        private readonly pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue> registers_ = new pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue>();
         /// <summary>
-        /// Thread registers
+        /// Thread registers (required if this is the crashed thread, optional otherwise). Note that if an error occurs
+        /// during crash report generation, the register values may be missing for the crashed thread. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.RegisterValue> Registers {
+        public pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.RegisterValue> Registers {
           get { return registers_; }
         }
 
@@ -2144,9 +2418,9 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (ThreadNumber != 0) hash ^= ThreadNumber.GetHashCode();
+          if (HasThreadNumber) hash ^= ThreadNumber.GetHashCode();
           hash ^= frames_.GetHashCode();
-          if (Crashed != false) hash ^= Crashed.GetHashCode();
+          if (HasCrashed) hash ^= Crashed.GetHashCode();
           hash ^= registers_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -2166,12 +2440,12 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (ThreadNumber != 0) {
+          if (HasThreadNumber) {
             output.WriteRawTag(8);
             output.WriteUInt32(ThreadNumber);
           }
           frames_.WriteTo(output, _repeated_frames_codec);
-          if (Crashed != false) {
+          if (HasCrashed) {
             output.WriteRawTag(24);
             output.WriteBool(Crashed);
           }
@@ -2186,12 +2460,12 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (ThreadNumber != 0) {
+          if (HasThreadNumber) {
             output.WriteRawTag(8);
             output.WriteUInt32(ThreadNumber);
           }
           frames_.WriteTo(ref output, _repeated_frames_codec);
-          if (Crashed != false) {
+          if (HasCrashed) {
             output.WriteRawTag(24);
             output.WriteBool(Crashed);
           }
@@ -2206,11 +2480,11 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (ThreadNumber != 0) {
+          if (HasThreadNumber) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ThreadNumber);
           }
           size += frames_.CalculateSize(_repeated_frames_codec);
-          if (Crashed != false) {
+          if (HasCrashed) {
             size += 1 + 1;
           }
           size += registers_.CalculateSize(_repeated_registers_codec);
@@ -2226,11 +2500,11 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.ThreadNumber != 0) {
+          if (other.HasThreadNumber) {
             ThreadNumber = other.ThreadNumber;
           }
           frames_.Add(other.frames_);
-          if (other.Crashed != false) {
+          if (other.HasCrashed) {
             Crashed = other.Crashed;
           }
           registers_.Add(other.registers_);
@@ -2315,7 +2589,7 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
-          /// Stack frame
+          /// Stack frame 
           /// </summary>
           [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
           public sealed partial class StackFrame : pb::IMessage<StackFrame>
@@ -2325,6 +2599,7 @@ namespace PLCrashUtil.Core {
           {
             private static readonly pb::MessageParser<StackFrame> _parser = new pb::MessageParser<StackFrame>(() => new StackFrame());
             private pb::UnknownFieldSet _unknownFields;
+            private int _hasBits0;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<StackFrame> Parser { get { return _parser; } }
@@ -2332,7 +2607,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::PLCrashUtil.Core.CrashReport.Types.Thread.Descriptor.NestedTypes[0]; }
+              get { return global::Plcrash.CrashReport.Types.Thread.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2352,6 +2627,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public StackFrame(StackFrame other) : this() {
+              _hasBits0 = other._hasBits0;
               pc_ = other.pc_;
               symbol_ = other.symbol_ != null ? other.symbol_.Clone() : null;
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -2365,28 +2641,53 @@ namespace PLCrashUtil.Core {
 
             /// <summary>Field number for the "pc" field.</summary>
             public const int PcFieldNumber = 3;
+            private readonly static ulong PcDefaultValue = 0UL;
+
             private ulong pc_;
             /// <summary>
-            /// Instruction pointer
+            /// Instruction pointer 
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ulong Pc {
-              get { return pc_; }
+              get { if ((_hasBits0 & 1) != 0) { return pc_; } else { return PcDefaultValue; } }
               set {
+                _hasBits0 |= 1;
                 pc_ = value;
               }
+            }
+            /// <summary>Gets whether the "pc" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasPc {
+              get { return (_hasBits0 & 1) != 0; }
+            }
+            /// <summary>Clears the value of the "pc" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearPc() {
+              _hasBits0 &= ~1;
             }
 
             /// <summary>Field number for the "symbol" field.</summary>
             public const int SymbolFieldNumber = 6;
-            private global::PLCrashUtil.Core.CrashReport.Types.Symbol symbol_;
+            private global::Plcrash.CrashReport.Types.Symbol symbol_;
             /// <summary>
-            /// Optional symbol information for this frame's PC.
+            ///
+            /// Optional symbol information for this frame's PC. If computed client-side, this value is a best guess, and may
+            /// be inaccurate.
+            /// 
+            /// Symbol information may not be available, in which case this field will be excluded from the report.
+            ///
+            /// This method of encoding symbol records is unfortunately ineffecient, as it is possible that the same
+            /// symbol will be included multiple times in a single crash report. Unfortunately, insofar as the crash reporter
+            /// must remain async-safe, there is no reasonable way to perform symbol uniquing at the time the report
+            /// is written. A future version of this format may resolve this issue, and migrate to the use of an index
+            /// into a shared symbol table.
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-            public global::PLCrashUtil.Core.CrashReport.Types.Symbol Symbol {
+            public global::Plcrash.CrashReport.Types.Symbol Symbol {
               get { return symbol_; }
               set {
                 symbol_ = value;
@@ -2417,7 +2718,7 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
-              if (Pc != 0UL) hash ^= Pc.GetHashCode();
+              if (HasPc) hash ^= Pc.GetHashCode();
               if (symbol_ != null) hash ^= Symbol.GetHashCode();
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
@@ -2437,7 +2738,7 @@ namespace PLCrashUtil.Core {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
             #else
-              if (Pc != 0UL) {
+              if (HasPc) {
                 output.WriteRawTag(24);
                 output.WriteUInt64(Pc);
               }
@@ -2455,7 +2756,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-              if (Pc != 0UL) {
+              if (HasPc) {
                 output.WriteRawTag(24);
                 output.WriteUInt64(Pc);
               }
@@ -2473,7 +2774,7 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
-              if (Pc != 0UL) {
+              if (HasPc) {
                 size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Pc);
               }
               if (symbol_ != null) {
@@ -2491,12 +2792,12 @@ namespace PLCrashUtil.Core {
               if (other == null) {
                 return;
               }
-              if (other.Pc != 0UL) {
+              if (other.HasPc) {
                 Pc = other.Pc;
               }
               if (other.symbol_ != null) {
                 if (symbol_ == null) {
-                  Symbol = new global::PLCrashUtil.Core.CrashReport.Types.Symbol();
+                  Symbol = new global::Plcrash.CrashReport.Types.Symbol();
                 }
                 Symbol.MergeFrom(other.Symbol);
               }
@@ -2525,7 +2826,7 @@ namespace PLCrashUtil.Core {
                   }
                   case 50: {
                     if (symbol_ == null) {
-                      Symbol = new global::PLCrashUtil.Core.CrashReport.Types.Symbol();
+                      Symbol = new global::Plcrash.CrashReport.Types.Symbol();
                     }
                     input.ReadMessage(Symbol);
                     break;
@@ -2555,7 +2856,7 @@ namespace PLCrashUtil.Core {
                   }
                   case 50: {
                     if (symbol_ == null) {
-                      Symbol = new global::PLCrashUtil.Core.CrashReport.Types.Symbol();
+                      Symbol = new global::Plcrash.CrashReport.Types.Symbol();
                     }
                     input.ReadMessage(Symbol);
                     break;
@@ -2568,7 +2869,7 @@ namespace PLCrashUtil.Core {
           }
 
           /// <summary>
-          /// A single register value
+          /// A single register value 
           /// </summary>
           [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
           public sealed partial class RegisterValue : pb::IMessage<RegisterValue>
@@ -2578,6 +2879,7 @@ namespace PLCrashUtil.Core {
           {
             private static readonly pb::MessageParser<RegisterValue> _parser = new pb::MessageParser<RegisterValue>(() => new RegisterValue());
             private pb::UnknownFieldSet _unknownFields;
+            private int _hasBits0;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<RegisterValue> Parser { get { return _parser; } }
@@ -2585,7 +2887,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::PLCrashUtil.Core.CrashReport.Types.Thread.Descriptor.NestedTypes[1]; }
+              get { return global::Plcrash.CrashReport.Types.Thread.Descriptor.NestedTypes[1]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2605,6 +2907,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public RegisterValue(RegisterValue other) : this() {
+              _hasBits0 = other._hasBits0;
               name_ = other.name_;
               value_ = other.value_;
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -2618,32 +2921,61 @@ namespace PLCrashUtil.Core {
 
             /// <summary>Field number for the "name" field.</summary>
             public const int NameFieldNumber = 1;
-            private string name_ = "";
+            private readonly static string NameDefaultValue = "";
+
+            private string name_;
             /// <summary>
-            /// Register name (r1, ebp, ...)
+            /// Register name (r1, ebp, ...) 
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public string Name {
-              get { return name_; }
+              get { return name_ ?? NameDefaultValue; }
               set {
                 name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
               }
             }
+            /// <summary>Gets whether the "name" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasName {
+              get { return name_ != null; }
+            }
+            /// <summary>Clears the value of the "name" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearName() {
+              name_ = null;
+            }
 
             /// <summary>Field number for the "value" field.</summary>
             public const int ValueFieldNumber = 2;
+            private readonly static ulong ValueDefaultValue = 0UL;
+
             private ulong value_;
             /// <summary>
-            /// Register value
+            /// Register value (32-bit or 64-bit) 
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ulong Value {
-              get { return value_; }
+              get { if ((_hasBits0 & 1) != 0) { return value_; } else { return ValueDefaultValue; } }
               set {
+                _hasBits0 |= 1;
                 value_ = value;
               }
+            }
+            /// <summary>Gets whether the "value" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasValue {
+              get { return (_hasBits0 & 1) != 0; }
+            }
+            /// <summary>Clears the value of the "value" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearValue() {
+              _hasBits0 &= ~1;
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2670,8 +3002,8 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
-              if (Name.Length != 0) hash ^= Name.GetHashCode();
-              if (Value != 0UL) hash ^= Value.GetHashCode();
+              if (HasName) hash ^= Name.GetHashCode();
+              if (HasValue) hash ^= Value.GetHashCode();
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
               }
@@ -2690,11 +3022,11 @@ namespace PLCrashUtil.Core {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
             #else
-              if (Name.Length != 0) {
+              if (HasName) {
                 output.WriteRawTag(10);
                 output.WriteString(Name);
               }
-              if (Value != 0UL) {
+              if (HasValue) {
                 output.WriteRawTag(16);
                 output.WriteUInt64(Value);
               }
@@ -2708,11 +3040,11 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-              if (Name.Length != 0) {
+              if (HasName) {
                 output.WriteRawTag(10);
                 output.WriteString(Name);
               }
-              if (Value != 0UL) {
+              if (HasValue) {
                 output.WriteRawTag(16);
                 output.WriteUInt64(Value);
               }
@@ -2726,10 +3058,10 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
-              if (Name.Length != 0) {
+              if (HasName) {
                 size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
               }
-              if (Value != 0UL) {
+              if (HasValue) {
                 size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Value);
               }
               if (_unknownFields != null) {
@@ -2744,10 +3076,10 @@ namespace PLCrashUtil.Core {
               if (other == null) {
                 return;
               }
-              if (other.Name.Length != 0) {
+              if (other.HasName) {
                 Name = other.Name;
               }
-              if (other.Value != 0UL) {
+              if (other.HasValue) {
                 Value = other.Value;
               }
               _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -2817,7 +3149,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Binary image
+      /// Binary image 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class BinaryImage : pb::IMessage<BinaryImage>
@@ -2827,6 +3159,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<BinaryImage> _parser = new pb::MessageParser<BinaryImage>(() => new BinaryImage());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<BinaryImage> Parser { get { return _parser; } }
@@ -2834,7 +3167,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[5]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[5]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -2854,6 +3187,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public BinaryImage(BinaryImage other) : this() {
+          _hasBits0 = other._hasBits0;
           baseAddress_ = other.baseAddress_;
           size_ = other.size_;
           name_ = other.name_;
@@ -2870,73 +3204,133 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "base_address" field.</summary>
         public const int BaseAddressFieldNumber = 1;
+        private readonly static ulong BaseAddressDefaultValue = 0UL;
+
         private ulong baseAddress_;
         /// <summary>
-        /// Image base address
+        /// Image base address 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong BaseAddress {
-          get { return baseAddress_; }
+          get { if ((_hasBits0 & 1) != 0) { return baseAddress_; } else { return BaseAddressDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             baseAddress_ = value;
           }
+        }
+        /// <summary>Gets whether the "base_address" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasBaseAddress {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "base_address" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearBaseAddress() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "size" field.</summary>
         public const int SizeFieldNumber = 2;
+        private readonly static ulong SizeDefaultValue = 0UL;
+
         private ulong size_;
         /// <summary>
-        /// Segment size
+        /// Segment size 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong Size {
-          get { return size_; }
+          get { if ((_hasBits0 & 2) != 0) { return size_; } else { return SizeDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             size_ = value;
           }
+        }
+        /// <summary>Gets whether the "size" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasSize {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "size" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearSize() {
+          _hasBits0 &= ~2;
         }
 
         /// <summary>Field number for the "name" field.</summary>
         public const int NameFieldNumber = 3;
-        private string name_ = "";
+        private readonly static string NameDefaultValue = "";
+
+        private string name_;
         /// <summary>
-        /// Name of the binary image (should be a full path name)
+        /// Name of the binary image (should be a full path name) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
-          get { return name_; }
+          get { return name_ ?? NameDefaultValue; }
           set {
             name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasName {
+          get { return name_ != null; }
+        }
+        /// <summary>Clears the value of the "name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearName() {
+          name_ = null;
+        }
 
         /// <summary>Field number for the "uuid" field.</summary>
         public const int UuidFieldNumber = 4;
-        private pb::ByteString uuid_ = pb::ByteString.Empty;
+        private readonly static pb::ByteString UuidDefaultValue = pb::ByteString.Empty;
+
+        private pb::ByteString uuid_;
         /// <summary>
-        /// 128-bit object UUID (matches Mach-O DWARF dSYM files)
+        /// 128-bit object UUID (matches Mach-O DWARF dSYM files) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pb::ByteString Uuid {
-          get { return uuid_; }
+          get { return uuid_ ?? UuidDefaultValue; }
           set {
             uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "uuid" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasUuid {
+          get { return uuid_ != null; }
+        }
+        /// <summary>Clears the value of the "uuid" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearUuid() {
+          uuid_ = null;
+        }
 
         /// <summary>Field number for the "code_type" field.</summary>
         public const int CodeTypeFieldNumber = 5;
-        private global::PLCrashUtil.Core.CrashReport.Types.Processor codeType_;
+        private global::Plcrash.CrashReport.Types.Processor codeType_;
         /// <summary>
-        /// The image's code type.
+        /// The image's code type. Should be included in all v1.1+ crash reports. The code type may differ between
+        /// binaries in the case of architectures with forwards-compatible code types, such as ARM, where armv6 and
+        /// armv7 images may be mixed. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.CrashReport.Types.Processor CodeType {
+        public global::Plcrash.CrashReport.Types.Processor CodeType {
           get { return codeType_; }
           set {
             codeType_ = value;
@@ -2970,10 +3364,10 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (BaseAddress != 0UL) hash ^= BaseAddress.GetHashCode();
-          if (Size != 0UL) hash ^= Size.GetHashCode();
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+          if (HasBaseAddress) hash ^= BaseAddress.GetHashCode();
+          if (HasSize) hash ^= Size.GetHashCode();
+          if (HasName) hash ^= Name.GetHashCode();
+          if (HasUuid) hash ^= Uuid.GetHashCode();
           if (codeType_ != null) hash ^= CodeType.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -2993,19 +3387,19 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (BaseAddress != 0UL) {
+          if (HasBaseAddress) {
             output.WriteRawTag(8);
             output.WriteUInt64(BaseAddress);
           }
-          if (Size != 0UL) {
+          if (HasSize) {
             output.WriteRawTag(16);
             output.WriteUInt64(Size);
           }
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(26);
             output.WriteString(Name);
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             output.WriteRawTag(34);
             output.WriteBytes(Uuid);
           }
@@ -3023,19 +3417,19 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (BaseAddress != 0UL) {
+          if (HasBaseAddress) {
             output.WriteRawTag(8);
             output.WriteUInt64(BaseAddress);
           }
-          if (Size != 0UL) {
+          if (HasSize) {
             output.WriteRawTag(16);
             output.WriteUInt64(Size);
           }
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(26);
             output.WriteString(Name);
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             output.WriteRawTag(34);
             output.WriteBytes(Uuid);
           }
@@ -3053,16 +3447,16 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (BaseAddress != 0UL) {
+          if (HasBaseAddress) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(BaseAddress);
           }
-          if (Size != 0UL) {
+          if (HasSize) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Size);
           }
-          if (Name.Length != 0) {
+          if (HasName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             size += 1 + pb::CodedOutputStream.ComputeBytesSize(Uuid);
           }
           if (codeType_ != null) {
@@ -3080,21 +3474,21 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.BaseAddress != 0UL) {
+          if (other.HasBaseAddress) {
             BaseAddress = other.BaseAddress;
           }
-          if (other.Size != 0UL) {
+          if (other.HasSize) {
             Size = other.Size;
           }
-          if (other.Name.Length != 0) {
+          if (other.HasName) {
             Name = other.Name;
           }
-          if (other.Uuid.Length != 0) {
+          if (other.HasUuid) {
             Uuid = other.Uuid;
           }
           if (other.codeType_ != null) {
             if (codeType_ == null) {
-              CodeType = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+              CodeType = new global::Plcrash.CrashReport.Types.Processor();
             }
             CodeType.MergeFrom(other.CodeType);
           }
@@ -3135,7 +3529,7 @@ namespace PLCrashUtil.Core {
               }
               case 42: {
                 if (codeType_ == null) {
-                  CodeType = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+                  CodeType = new global::Plcrash.CrashReport.Types.Processor();
                 }
                 input.ReadMessage(CodeType);
                 break;
@@ -3177,7 +3571,7 @@ namespace PLCrashUtil.Core {
               }
               case 42: {
                 if (codeType_ == null) {
-                  CodeType = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+                  CodeType = new global::Plcrash.CrashReport.Types.Processor();
                 }
                 input.ReadMessage(CodeType);
                 break;
@@ -3190,7 +3584,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Exception
+      /// Exception 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class Exception : pb::IMessage<Exception>
@@ -3207,7 +3601,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[6]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[6]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3241,45 +3635,74 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "name" field.</summary>
         public const int NameFieldNumber = 1;
-        private string name_ = "";
+        private readonly static string NameDefaultValue = "";
+
+        private string name_;
         /// <summary>
-        /// The exception name that triggered this crash
+        /// The exception name that triggered this crash 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
-          get { return name_; }
+          get { return name_ ?? NameDefaultValue; }
           set {
             name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasName {
+          get { return name_ != null; }
+        }
+        /// <summary>Clears the value of the "name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearName() {
+          name_ = null;
+        }
 
         /// <summary>Field number for the "reason" field.</summary>
         public const int ReasonFieldNumber = 2;
-        private string reason_ = "";
+        private readonly static string ReasonDefaultValue = "";
+
+        private string reason_;
         /// <summary>
-        /// The exception reason
+        /// The exception reason 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Reason {
-          get { return reason_; }
+          get { return reason_ ?? ReasonDefaultValue; }
           set {
             reason_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "reason" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasReason {
+          get { return reason_ != null; }
+        }
+        /// <summary>Clears the value of the "reason" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearReason() {
+          reason_ = null;
+        }
 
         /// <summary>Field number for the "frames" field.</summary>
         public const int FramesFieldNumber = 3;
-        private static readonly pb::FieldCodec<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> _repeated_frames_codec
-            = pb::FieldCodec.ForMessage(26, global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame.Parser);
-        private readonly pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> frames_ = new pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame>();
+        private static readonly pb::FieldCodec<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> _repeated_frames_codec
+            = pb::FieldCodec.ForMessage(26, global::Plcrash.CrashReport.Types.Thread.Types.StackFrame.Parser);
+        private readonly pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> frames_ = new pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame>();
         /// <summary>
-        /// The exception's original call stack, if available.
+        /// The exception's original call stack, if available. This may be preserved across rethrow of an exception,
+        /// and can be used to determine the original call stack. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public pbc::RepeatedField<global::PLCrashUtil.Core.CrashReport.Types.Thread.Types.StackFrame> Frames {
+        public pbc::RepeatedField<global::Plcrash.CrashReport.Types.Thread.Types.StackFrame> Frames {
           get { return frames_; }
         }
 
@@ -3308,8 +3731,8 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (Reason.Length != 0) hash ^= Reason.GetHashCode();
+          if (HasName) hash ^= Name.GetHashCode();
+          if (HasReason) hash ^= Reason.GetHashCode();
           hash ^= frames_.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -3329,11 +3752,11 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (Reason.Length != 0) {
+          if (HasReason) {
             output.WriteRawTag(18);
             output.WriteString(Reason);
           }
@@ -3348,11 +3771,11 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (Reason.Length != 0) {
+          if (HasReason) {
             output.WriteRawTag(18);
             output.WriteString(Reason);
           }
@@ -3367,10 +3790,10 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Name.Length != 0) {
+          if (HasName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
           }
-          if (Reason.Length != 0) {
+          if (HasReason) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Reason);
           }
           size += frames_.CalculateSize(_repeated_frames_codec);
@@ -3386,10 +3809,10 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Name.Length != 0) {
+          if (other.HasName) {
             Name = other.Name;
           }
-          if (other.Reason.Length != 0) {
+          if (other.HasReason) {
             Reason = other.Reason;
           }
           frames_.Add(other.frames_);
@@ -3463,7 +3886,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Signal Information
+      /// Signal Information 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class Signal : pb::IMessage<Signal>
@@ -3473,6 +3896,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<Signal> _parser = new pb::MessageParser<Signal>(() => new Signal());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<Signal> Parser { get { return _parser; } }
@@ -3480,7 +3904,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[7]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[7]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3500,6 +3924,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public Signal(Signal other) : this() {
+          _hasBits0 = other._hasBits0;
           name_ = other.name_;
           code_ = other.code_;
           address_ = other.address_;
@@ -3515,58 +3940,109 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "name" field.</summary>
         public const int NameFieldNumber = 1;
-        private string name_ = "";
+        private readonly static string NameDefaultValue = "";
+
+        private string name_;
         /// <summary>
-        /// Signal name
+        ///* Signal name 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Name {
-          get { return name_; }
+          get { return name_ ?? NameDefaultValue; }
           set {
             name_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasName {
+          get { return name_ != null; }
+        }
+        /// <summary>Clears the value of the "name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearName() {
+          name_ = null;
+        }
 
         /// <summary>Field number for the "code" field.</summary>
         public const int CodeFieldNumber = 2;
-        private string code_ = "";
+        private readonly static string CodeDefaultValue = "";
+
+        private string code_;
         /// <summary>
-        /// Signal code
+        /// Signal code 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Code {
-          get { return code_; }
+          get { return code_ ?? CodeDefaultValue; }
           set {
             code_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "code" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasCode {
+          get { return code_ != null; }
+        }
+        /// <summary>Clears the value of the "code" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearCode() {
+          code_ = null;
+        }
 
         /// <summary>Field number for the "address" field.</summary>
         public const int AddressFieldNumber = 3;
+        private readonly static ulong AddressDefaultValue = 0UL;
+
         private ulong address_;
         /// <summary>
-        /// The signal address
+        /// Faulting instruction or address 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong Address {
-          get { return address_; }
+          get { if ((_hasBits0 & 1) != 0) { return address_; } else { return AddressDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             address_ = value;
           }
+        }
+        /// <summary>Gets whether the "address" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasAddress {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "address" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearAddress() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "mach_exception" field.</summary>
         public const int MachExceptionFieldNumber = 4;
-        private global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException machException_;
+        private global::Plcrash.CrashReport.Types.Signal.Types.MachException machException_;
         /// <summary>
-        /// Mach exception info (optional)
+        ///
+        /// The Mach Exception that triggered the crash. This field will only be included in the
+        /// case that encoding crash reporter's exception-based reporting was enabled, and a Mach
+        /// exception was caught.
+        ///
+        /// If the mach_exception field is defined, the legacy signal info will also be provided; this is required to maintain
+        /// backwards compatibility with existing report handlers. Note, however, that the signal info may be derived from the
+        /// Mach exception info by the encoding crash reporter, and thus may not exactly match the kernel exception-to-signal
+        /// mappings implemented in xnu. As such, when Mach exception data is available, its use should be preferred.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException MachException {
+        public global::Plcrash.CrashReport.Types.Signal.Types.MachException MachException {
           get { return machException_; }
           set {
             machException_ = value;
@@ -3599,9 +4075,9 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Name.Length != 0) hash ^= Name.GetHashCode();
-          if (Code.Length != 0) hash ^= Code.GetHashCode();
-          if (Address != 0UL) hash ^= Address.GetHashCode();
+          if (HasName) hash ^= Name.GetHashCode();
+          if (HasCode) hash ^= Code.GetHashCode();
+          if (HasAddress) hash ^= Address.GetHashCode();
           if (machException_ != null) hash ^= MachException.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
@@ -3621,15 +4097,15 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (Code.Length != 0) {
+          if (HasCode) {
             output.WriteRawTag(18);
             output.WriteString(Code);
           }
-          if (Address != 0UL) {
+          if (HasAddress) {
             output.WriteRawTag(24);
             output.WriteUInt64(Address);
           }
@@ -3647,15 +4123,15 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Name.Length != 0) {
+          if (HasName) {
             output.WriteRawTag(10);
             output.WriteString(Name);
           }
-          if (Code.Length != 0) {
+          if (HasCode) {
             output.WriteRawTag(18);
             output.WriteString(Code);
           }
-          if (Address != 0UL) {
+          if (HasAddress) {
             output.WriteRawTag(24);
             output.WriteUInt64(Address);
           }
@@ -3673,13 +4149,13 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Name.Length != 0) {
+          if (HasName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Name);
           }
-          if (Code.Length != 0) {
+          if (HasCode) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Code);
           }
-          if (Address != 0UL) {
+          if (HasAddress) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Address);
           }
           if (machException_ != null) {
@@ -3697,18 +4173,18 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Name.Length != 0) {
+          if (other.HasName) {
             Name = other.Name;
           }
-          if (other.Code.Length != 0) {
+          if (other.HasCode) {
             Code = other.Code;
           }
-          if (other.Address != 0UL) {
+          if (other.HasAddress) {
             Address = other.Address;
           }
           if (other.machException_ != null) {
             if (machException_ == null) {
-              MachException = new global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException();
+              MachException = new global::Plcrash.CrashReport.Types.Signal.Types.MachException();
             }
             MachException.MergeFrom(other.MachException);
           }
@@ -3745,7 +4221,7 @@ namespace PLCrashUtil.Core {
               }
               case 34: {
                 if (machException_ == null) {
-                  MachException = new global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException();
+                  MachException = new global::Plcrash.CrashReport.Types.Signal.Types.MachException();
                 }
                 input.ReadMessage(MachException);
                 break;
@@ -3783,7 +4259,7 @@ namespace PLCrashUtil.Core {
               }
               case 34: {
                 if (machException_ == null) {
-                  MachException = new global::PLCrashUtil.Core.CrashReport.Types.Signal.Types.MachException();
+                  MachException = new global::Plcrash.CrashReport.Types.Signal.Types.MachException();
                 }
                 input.ReadMessage(MachException);
                 break;
@@ -3799,6 +4275,7 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static partial class Types {
           /// <summary>
+          ///
           /// Mach exception info.
           /// </summary>
           [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -3809,6 +4286,7 @@ namespace PLCrashUtil.Core {
           {
             private static readonly pb::MessageParser<MachException> _parser = new pb::MessageParser<MachException>(() => new MachException());
             private pb::UnknownFieldSet _unknownFields;
+            private int _hasBits0;
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pb::MessageParser<MachException> Parser { get { return _parser; } }
@@ -3816,7 +4294,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public static pbr::MessageDescriptor Descriptor {
-              get { return global::PLCrashUtil.Core.CrashReport.Types.Signal.Descriptor.NestedTypes[0]; }
+              get { return global::Plcrash.CrashReport.Types.Signal.Descriptor.NestedTypes[0]; }
             }
 
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -3836,6 +4314,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public MachException(MachException other) : this() {
+              _hasBits0 = other._hasBits0;
               type_ = other.type_;
               codes_ = other.codes_.Clone();
               _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -3849,26 +4328,42 @@ namespace PLCrashUtil.Core {
 
             /// <summary>Field number for the "type" field.</summary>
             public const int TypeFieldNumber = 1;
+            private readonly static ulong TypeDefaultValue = 0UL;
+
             private ulong type_;
             /// <summary>
-            /// The exception type.
+            /// The exception type. These values will generally be common across most Apple platforms. 
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public ulong Type {
-              get { return type_; }
+              get { if ((_hasBits0 & 1) != 0) { return type_; } else { return TypeDefaultValue; } }
               set {
+                _hasBits0 |= 1;
                 type_ = value;
               }
+            }
+            /// <summary>Gets whether the "type" field is set</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public bool HasType {
+              get { return (_hasBits0 & 1) != 0; }
+            }
+            /// <summary>Clears the value of the "type" field</summary>
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+            [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+            public void ClearType() {
+              _hasBits0 &= ~1;
             }
 
             /// <summary>Field number for the "codes" field.</summary>
             public const int CodesFieldNumber = 2;
             private static readonly pb::FieldCodec<ulong> _repeated_codes_codec
-                = pb::FieldCodec.ForUInt64(18);
+                = pb::FieldCodec.ForUInt64(16);
             private readonly pbc::RepeatedField<ulong> codes_ = new pbc::RepeatedField<ulong>();
             /// <summary>
-            /// The exception codes.
+            /// The exception codes. Interpretation of these values depends on the exception type, and/or the
+            /// faulting platform. 
             /// </summary>
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -3900,7 +4395,7 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public override int GetHashCode() {
               int hash = 1;
-              if (Type != 0UL) hash ^= Type.GetHashCode();
+              if (HasType) hash ^= Type.GetHashCode();
               hash ^= codes_.GetHashCode();
               if (_unknownFields != null) {
                 hash ^= _unknownFields.GetHashCode();
@@ -3920,7 +4415,7 @@ namespace PLCrashUtil.Core {
             #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
               output.WriteRawMessage(this);
             #else
-              if (Type != 0UL) {
+              if (HasType) {
                 output.WriteRawTag(8);
                 output.WriteUInt64(Type);
               }
@@ -3935,7 +4430,7 @@ namespace PLCrashUtil.Core {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-              if (Type != 0UL) {
+              if (HasType) {
                 output.WriteRawTag(8);
                 output.WriteUInt64(Type);
               }
@@ -3950,7 +4445,7 @@ namespace PLCrashUtil.Core {
             [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
             public int CalculateSize() {
               int size = 0;
-              if (Type != 0UL) {
+              if (HasType) {
                 size += 1 + pb::CodedOutputStream.ComputeUInt64Size(Type);
               }
               size += codes_.CalculateSize(_repeated_codes_codec);
@@ -3966,7 +4461,7 @@ namespace PLCrashUtil.Core {
               if (other == null) {
                 return;
               }
-              if (other.Type != 0UL) {
+              if (other.HasType) {
                 Type = other.Type;
               }
               codes_.Add(other.codes_);
@@ -4039,7 +4534,8 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
-      /// Process info
+      /// Process Data. This was not available in earlier releases of the crash reporter and is marked optional
+      /// for compatibility. 
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
       public sealed partial class ProcessInfo : pb::IMessage<ProcessInfo>
@@ -4049,6 +4545,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<ProcessInfo> _parser = new pb::MessageParser<ProcessInfo>(() => new ProcessInfo());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ProcessInfo> Parser { get { return _parser; } }
@@ -4056,7 +4553,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[8]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[8]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4076,6 +4573,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ProcessInfo(ProcessInfo other) : this() {
+          _hasBits0 = other._hasBits0;
           processName_ = other.processName_;
           processId_ = other.processId_;
           processPath_ = other.processPath_;
@@ -4094,107 +4592,210 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "process_name" field.</summary>
         public const int ProcessNameFieldNumber = 1;
-        private string processName_ = "";
+        private readonly static string ProcessNameDefaultValue = "";
+
+        private string processName_;
         /// <summary>
-        /// Application process name
+        /// Application process name 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ProcessName {
-          get { return processName_; }
+          get { return processName_ ?? ProcessNameDefaultValue; }
           set {
             processName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "process_name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasProcessName {
+          get { return processName_ != null; }
+        }
+        /// <summary>Clears the value of the "process_name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearProcessName() {
+          processName_ = null;
+        }
 
         /// <summary>Field number for the "process_id" field.</summary>
         public const int ProcessIdFieldNumber = 2;
+        private readonly static uint ProcessIdDefaultValue = 0;
+
         private uint processId_;
         /// <summary>
-        /// Application process ID
+        /// Application process ID 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint ProcessId {
-          get { return processId_; }
+          get { if ((_hasBits0 & 1) != 0) { return processId_; } else { return ProcessIdDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             processId_ = value;
           }
+        }
+        /// <summary>Gets whether the "process_id" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasProcessId {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "process_id" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearProcessId() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "process_path" field.</summary>
         public const int ProcessPathFieldNumber = 3;
-        private string processPath_ = "";
+        private readonly static string ProcessPathDefaultValue = "";
+
+        private string processPath_;
         /// <summary>
-        /// Application process path
+        /// Application process path 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ProcessPath {
-          get { return processPath_; }
+          get { return processPath_ ?? ProcessPathDefaultValue; }
           set {
             processPath_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "process_path" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasProcessPath {
+          get { return processPath_ != null; }
+        }
+        /// <summary>Clears the value of the "process_path" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearProcessPath() {
+          processPath_ = null;
+        }
 
         /// <summary>Field number for the "parent_process_name" field.</summary>
         public const int ParentProcessNameFieldNumber = 4;
-        private string parentProcessName_ = "";
+        private readonly static string ParentProcessNameDefaultValue = "";
+
+        private string parentProcessName_;
         /// <summary>
-        /// Application parent process name
+        /// Application parent process name 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string ParentProcessName {
-          get { return parentProcessName_; }
+          get { return parentProcessName_ ?? ParentProcessNameDefaultValue; }
           set {
             parentProcessName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "parent_process_name" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasParentProcessName {
+          get { return parentProcessName_ != null; }
+        }
+        /// <summary>Clears the value of the "parent_process_name" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearParentProcessName() {
+          parentProcessName_ = null;
+        }
 
         /// <summary>Field number for the "parent_process_id" field.</summary>
         public const int ParentProcessIdFieldNumber = 5;
+        private readonly static uint ParentProcessIdDefaultValue = 0;
+
         private uint parentProcessId_;
         /// <summary>
-        /// Application parent process ID
+        /// Application parent process ID 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint ParentProcessId {
-          get { return parentProcessId_; }
+          get { if ((_hasBits0 & 2) != 0) { return parentProcessId_; } else { return ParentProcessIdDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             parentProcessId_ = value;
           }
+        }
+        /// <summary>Gets whether the "parent_process_id" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasParentProcessId {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "parent_process_id" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearParentProcessId() {
+          _hasBits0 &= ~2;
         }
 
         /// <summary>Field number for the "native" field.</summary>
         public const int NativeFieldNumber = 6;
+        private readonly static bool NativeDefaultValue = false;
+
         private bool native_;
         /// <summary>
-        /// If false, the process is being run via process-level CPU emulation (such as Rosetta).
+        ///* If false, the process is being run via process-level CPU emulation (such as Rosetta). 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool Native {
-          get { return native_; }
+          get { if ((_hasBits0 & 4) != 0) { return native_; } else { return NativeDefaultValue; } }
           set {
+            _hasBits0 |= 4;
             native_ = value;
           }
+        }
+        /// <summary>Gets whether the "native" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasNative {
+          get { return (_hasBits0 & 4) != 0; }
+        }
+        /// <summary>Clears the value of the "native" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearNative() {
+          _hasBits0 &= ~4;
         }
 
         /// <summary>Field number for the "start_time" field.</summary>
         public const int StartTimeFieldNumber = 7;
+        private readonly static ulong StartTimeDefaultValue = 0UL;
+
         private ulong startTime_;
         /// <summary>
-        /// The start time of the process (as seconds since UNIX epoch).
+        ///* The start time of the process (as seconds since UNIX epoch). The field may be
+        /// ommitted if the start time can not be determined. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ulong StartTime {
-          get { return startTime_; }
+          get { if ((_hasBits0 & 8) != 0) { return startTime_; } else { return StartTimeDefaultValue; } }
           set {
+            _hasBits0 |= 8;
             startTime_ = value;
           }
+        }
+        /// <summary>Gets whether the "start_time" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasStartTime {
+          get { return (_hasBits0 & 8) != 0; }
+        }
+        /// <summary>Clears the value of the "start_time" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearStartTime() {
+          _hasBits0 &= ~8;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4226,13 +4827,13 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (ProcessName.Length != 0) hash ^= ProcessName.GetHashCode();
-          if (ProcessId != 0) hash ^= ProcessId.GetHashCode();
-          if (ProcessPath.Length != 0) hash ^= ProcessPath.GetHashCode();
-          if (ParentProcessName.Length != 0) hash ^= ParentProcessName.GetHashCode();
-          if (ParentProcessId != 0) hash ^= ParentProcessId.GetHashCode();
-          if (Native != false) hash ^= Native.GetHashCode();
-          if (StartTime != 0UL) hash ^= StartTime.GetHashCode();
+          if (HasProcessName) hash ^= ProcessName.GetHashCode();
+          if (HasProcessId) hash ^= ProcessId.GetHashCode();
+          if (HasProcessPath) hash ^= ProcessPath.GetHashCode();
+          if (HasParentProcessName) hash ^= ParentProcessName.GetHashCode();
+          if (HasParentProcessId) hash ^= ParentProcessId.GetHashCode();
+          if (HasNative) hash ^= Native.GetHashCode();
+          if (HasStartTime) hash ^= StartTime.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4251,31 +4852,31 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (ProcessName.Length != 0) {
+          if (HasProcessName) {
             output.WriteRawTag(10);
             output.WriteString(ProcessName);
           }
-          if (ProcessId != 0) {
+          if (HasProcessId) {
             output.WriteRawTag(16);
             output.WriteUInt32(ProcessId);
           }
-          if (ProcessPath.Length != 0) {
+          if (HasProcessPath) {
             output.WriteRawTag(26);
             output.WriteString(ProcessPath);
           }
-          if (ParentProcessName.Length != 0) {
+          if (HasParentProcessName) {
             output.WriteRawTag(34);
             output.WriteString(ParentProcessName);
           }
-          if (ParentProcessId != 0) {
+          if (HasParentProcessId) {
             output.WriteRawTag(40);
             output.WriteUInt32(ParentProcessId);
           }
-          if (Native != false) {
+          if (HasNative) {
             output.WriteRawTag(48);
             output.WriteBool(Native);
           }
-          if (StartTime != 0UL) {
+          if (HasStartTime) {
             output.WriteRawTag(56);
             output.WriteUInt64(StartTime);
           }
@@ -4289,31 +4890,31 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (ProcessName.Length != 0) {
+          if (HasProcessName) {
             output.WriteRawTag(10);
             output.WriteString(ProcessName);
           }
-          if (ProcessId != 0) {
+          if (HasProcessId) {
             output.WriteRawTag(16);
             output.WriteUInt32(ProcessId);
           }
-          if (ProcessPath.Length != 0) {
+          if (HasProcessPath) {
             output.WriteRawTag(26);
             output.WriteString(ProcessPath);
           }
-          if (ParentProcessName.Length != 0) {
+          if (HasParentProcessName) {
             output.WriteRawTag(34);
             output.WriteString(ParentProcessName);
           }
-          if (ParentProcessId != 0) {
+          if (HasParentProcessId) {
             output.WriteRawTag(40);
             output.WriteUInt32(ParentProcessId);
           }
-          if (Native != false) {
+          if (HasNative) {
             output.WriteRawTag(48);
             output.WriteBool(Native);
           }
-          if (StartTime != 0UL) {
+          if (HasStartTime) {
             output.WriteRawTag(56);
             output.WriteUInt64(StartTime);
           }
@@ -4327,25 +4928,25 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (ProcessName.Length != 0) {
+          if (HasProcessName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessName);
           }
-          if (ProcessId != 0) {
+          if (HasProcessId) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ProcessId);
           }
-          if (ProcessPath.Length != 0) {
+          if (HasProcessPath) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(ProcessPath);
           }
-          if (ParentProcessName.Length != 0) {
+          if (HasParentProcessName) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(ParentProcessName);
           }
-          if (ParentProcessId != 0) {
+          if (HasParentProcessId) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ParentProcessId);
           }
-          if (Native != false) {
+          if (HasNative) {
             size += 1 + 1;
           }
-          if (StartTime != 0UL) {
+          if (HasStartTime) {
             size += 1 + pb::CodedOutputStream.ComputeUInt64Size(StartTime);
           }
           if (_unknownFields != null) {
@@ -4360,25 +4961,25 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.ProcessName.Length != 0) {
+          if (other.HasProcessName) {
             ProcessName = other.ProcessName;
           }
-          if (other.ProcessId != 0) {
+          if (other.HasProcessId) {
             ProcessId = other.ProcessId;
           }
-          if (other.ProcessPath.Length != 0) {
+          if (other.HasProcessPath) {
             ProcessPath = other.ProcessPath;
           }
-          if (other.ParentProcessName.Length != 0) {
+          if (other.HasParentProcessName) {
             ParentProcessName = other.ParentProcessName;
           }
-          if (other.ParentProcessId != 0) {
+          if (other.HasParentProcessId) {
             ParentProcessId = other.ParentProcessId;
           }
-          if (other.Native != false) {
+          if (other.HasNative) {
             Native = other.Native;
           }
-          if (other.StartTime != 0UL) {
+          if (other.HasStartTime) {
             StartTime = other.StartTime;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4483,6 +5084,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
+      ///
       /// Host architecture information.
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -4493,6 +5095,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<MachineInfo> _parser = new pb::MessageParser<MachineInfo>(() => new MachineInfo());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<MachineInfo> Parser { get { return _parser; } }
@@ -4500,7 +5103,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[9]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[9]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4520,6 +5123,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public MachineInfo(MachineInfo other) : this() {
+          _hasBits0 = other._hasBits0;
           model_ = other.model_;
           processor_ = other.processor_ != null ? other.processor_.Clone() : null;
           processorCount_ = other.processorCount_;
@@ -4535,28 +5139,42 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "model" field.</summary>
         public const int ModelFieldNumber = 1;
-        private string model_ = "";
+        private readonly static string ModelDefaultValue = "";
+
+        private string model_;
         /// <summary>
-        /// Hardware model (eg, MacBookPro6,1)
+        /// Hardware model (eg, MacBookPro6,1) 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public string Model {
-          get { return model_; }
+          get { return model_ ?? ModelDefaultValue; }
           set {
             model_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
         }
+        /// <summary>Gets whether the "model" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasModel {
+          get { return model_ != null; }
+        }
+        /// <summary>Clears the value of the "model" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearModel() {
+          model_ = null;
+        }
 
         /// <summary>Field number for the "processor" field.</summary>
         public const int ProcessorFieldNumber = 2;
-        private global::PLCrashUtil.Core.CrashReport.Types.Processor processor_;
+        private global::Plcrash.CrashReport.Types.Processor processor_;
         /// <summary>
-        /// The host processor.
+        /// The host processor. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-        public global::PLCrashUtil.Core.CrashReport.Types.Processor Processor {
+        public global::Plcrash.CrashReport.Types.Processor Processor {
           get { return processor_; }
           set {
             processor_ = value;
@@ -4565,32 +5183,67 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "processor_count" field.</summary>
         public const int ProcessorCountFieldNumber = 3;
+        private readonly static uint ProcessorCountDefaultValue = 0;
+
         private uint processorCount_;
         /// <summary>
-        /// The number of actual physical processor cores.
+        ///
+        /// The number of actual physical processor cores. Note that the number of active processors may be managed by the
+        /// operating system's power management system, and this value may not reflect the number of active
+        /// processors at the time of the crash. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint ProcessorCount {
-          get { return processorCount_; }
+          get { if ((_hasBits0 & 1) != 0) { return processorCount_; } else { return ProcessorCountDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             processorCount_ = value;
           }
+        }
+        /// <summary>Gets whether the "processor_count" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasProcessorCount {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "processor_count" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearProcessorCount() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "logical_processor_count" field.</summary>
         public const int LogicalProcessorCountFieldNumber = 4;
+        private readonly static uint LogicalProcessorCountDefaultValue = 0;
+
         private uint logicalProcessorCount_;
         /// <summary>
-        /// The number of logical processors.
+        /// The number of logical processors.  Note that the number of active processors may be managed by the
+        /// operating system's power management system, and this value may not reflect the number of active
+        /// processors at the time of the crash.
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public uint LogicalProcessorCount {
-          get { return logicalProcessorCount_; }
+          get { if ((_hasBits0 & 2) != 0) { return logicalProcessorCount_; } else { return LogicalProcessorCountDefaultValue; } }
           set {
+            _hasBits0 |= 2;
             logicalProcessorCount_ = value;
           }
+        }
+        /// <summary>Gets whether the "logical_processor_count" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasLogicalProcessorCount {
+          get { return (_hasBits0 & 2) != 0; }
+        }
+        /// <summary>Clears the value of the "logical_processor_count" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearLogicalProcessorCount() {
+          _hasBits0 &= ~2;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4619,10 +5272,10 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (Model.Length != 0) hash ^= Model.GetHashCode();
+          if (HasModel) hash ^= Model.GetHashCode();
           if (processor_ != null) hash ^= Processor.GetHashCode();
-          if (ProcessorCount != 0) hash ^= ProcessorCount.GetHashCode();
-          if (LogicalProcessorCount != 0) hash ^= LogicalProcessorCount.GetHashCode();
+          if (HasProcessorCount) hash ^= ProcessorCount.GetHashCode();
+          if (HasLogicalProcessorCount) hash ^= LogicalProcessorCount.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4641,7 +5294,7 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (Model.Length != 0) {
+          if (HasModel) {
             output.WriteRawTag(10);
             output.WriteString(Model);
           }
@@ -4649,11 +5302,11 @@ namespace PLCrashUtil.Core {
             output.WriteRawTag(18);
             output.WriteMessage(Processor);
           }
-          if (ProcessorCount != 0) {
+          if (HasProcessorCount) {
             output.WriteRawTag(24);
             output.WriteUInt32(ProcessorCount);
           }
-          if (LogicalProcessorCount != 0) {
+          if (HasLogicalProcessorCount) {
             output.WriteRawTag(32);
             output.WriteUInt32(LogicalProcessorCount);
           }
@@ -4667,7 +5320,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (Model.Length != 0) {
+          if (HasModel) {
             output.WriteRawTag(10);
             output.WriteString(Model);
           }
@@ -4675,11 +5328,11 @@ namespace PLCrashUtil.Core {
             output.WriteRawTag(18);
             output.WriteMessage(Processor);
           }
-          if (ProcessorCount != 0) {
+          if (HasProcessorCount) {
             output.WriteRawTag(24);
             output.WriteUInt32(ProcessorCount);
           }
-          if (LogicalProcessorCount != 0) {
+          if (HasLogicalProcessorCount) {
             output.WriteRawTag(32);
             output.WriteUInt32(LogicalProcessorCount);
           }
@@ -4693,16 +5346,16 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (Model.Length != 0) {
+          if (HasModel) {
             size += 1 + pb::CodedOutputStream.ComputeStringSize(Model);
           }
           if (processor_ != null) {
             size += 1 + pb::CodedOutputStream.ComputeMessageSize(Processor);
           }
-          if (ProcessorCount != 0) {
+          if (HasProcessorCount) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(ProcessorCount);
           }
-          if (LogicalProcessorCount != 0) {
+          if (HasLogicalProcessorCount) {
             size += 1 + pb::CodedOutputStream.ComputeUInt32Size(LogicalProcessorCount);
           }
           if (_unknownFields != null) {
@@ -4717,19 +5370,19 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.Model.Length != 0) {
+          if (other.HasModel) {
             Model = other.Model;
           }
           if (other.processor_ != null) {
             if (processor_ == null) {
-              Processor = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+              Processor = new global::Plcrash.CrashReport.Types.Processor();
             }
             Processor.MergeFrom(other.Processor);
           }
-          if (other.ProcessorCount != 0) {
+          if (other.HasProcessorCount) {
             ProcessorCount = other.ProcessorCount;
           }
-          if (other.LogicalProcessorCount != 0) {
+          if (other.HasLogicalProcessorCount) {
             LogicalProcessorCount = other.LogicalProcessorCount;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -4757,7 +5410,7 @@ namespace PLCrashUtil.Core {
               }
               case 18: {
                 if (processor_ == null) {
-                  Processor = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+                  Processor = new global::Plcrash.CrashReport.Types.Processor();
                 }
                 input.ReadMessage(Processor);
                 break;
@@ -4795,7 +5448,7 @@ namespace PLCrashUtil.Core {
               }
               case 18: {
                 if (processor_ == null) {
-                  Processor = new global::PLCrashUtil.Core.CrashReport.Types.Processor();
+                  Processor = new global::Plcrash.CrashReport.Types.Processor();
                 }
                 input.ReadMessage(Processor);
                 break;
@@ -4816,6 +5469,7 @@ namespace PLCrashUtil.Core {
       }
 
       /// <summary>
+      ///
       /// Report format information
       /// </summary>
       [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
@@ -4826,6 +5480,7 @@ namespace PLCrashUtil.Core {
       {
         private static readonly pb::MessageParser<ReportInfo> _parser = new pb::MessageParser<ReportInfo>(() => new ReportInfo());
         private pb::UnknownFieldSet _unknownFields;
+        private int _hasBits0;
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pb::MessageParser<ReportInfo> Parser { get { return _parser; } }
@@ -4833,7 +5488,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public static pbr::MessageDescriptor Descriptor {
-          get { return global::PLCrashUtil.Core.CrashReport.Descriptor.NestedTypes[10]; }
+          get { return global::Plcrash.CrashReport.Descriptor.NestedTypes[10]; }
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4853,6 +5508,7 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public ReportInfo(ReportInfo other) : this() {
+          _hasBits0 = other._hasBits0;
           userRequested_ = other.userRequested_;
           uuid_ = other.uuid_;
           _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
@@ -4866,32 +5522,62 @@ namespace PLCrashUtil.Core {
 
         /// <summary>Field number for the "user_requested" field.</summary>
         public const int UserRequestedFieldNumber = 1;
+        private readonly static bool UserRequestedDefaultValue = false;
+
         private bool userRequested_;
         /// <summary>
-        /// If true, this report was generated on request, and no crash occured.
+        ///* If true, this report was generated on request, and no crash occured. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public bool UserRequested {
-          get { return userRequested_; }
+          get { if ((_hasBits0 & 1) != 0) { return userRequested_; } else { return UserRequestedDefaultValue; } }
           set {
+            _hasBits0 |= 1;
             userRequested_ = value;
           }
+        }
+        /// <summary>Gets whether the "user_requested" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasUserRequested {
+          get { return (_hasBits0 & 1) != 0; }
+        }
+        /// <summary>Clears the value of the "user_requested" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearUserRequested() {
+          _hasBits0 &= ~1;
         }
 
         /// <summary>Field number for the "uuid" field.</summary>
         public const int UuidFieldNumber = 2;
-        private pb::ByteString uuid_ = pb::ByteString.Empty;
+        private readonly static pb::ByteString UuidDefaultValue = pb::ByteString.Empty;
+
+        private pb::ByteString uuid_;
         /// <summary>
-        /// A client-generated 16 byte OSF standard UUID for this report.
+        ///* A client-generated 16 byte OSF standard UUID for this report. May be used to filter duplicate reports submitted
+        /// by a single client. 
         /// </summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public pb::ByteString Uuid {
-          get { return uuid_; }
+          get { return uuid_ ?? UuidDefaultValue; }
           set {
             uuid_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
           }
+        }
+        /// <summary>Gets whether the "uuid" field is set</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public bool HasUuid {
+          get { return uuid_ != null; }
+        }
+        /// <summary>Clears the value of the "uuid" field</summary>
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+        [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+        public void ClearUuid() {
+          uuid_ = null;
         }
 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -4918,8 +5604,8 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public override int GetHashCode() {
           int hash = 1;
-          if (UserRequested != false) hash ^= UserRequested.GetHashCode();
-          if (Uuid.Length != 0) hash ^= Uuid.GetHashCode();
+          if (HasUserRequested) hash ^= UserRequested.GetHashCode();
+          if (HasUuid) hash ^= Uuid.GetHashCode();
           if (_unknownFields != null) {
             hash ^= _unknownFields.GetHashCode();
           }
@@ -4938,11 +5624,11 @@ namespace PLCrashUtil.Core {
         #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
           output.WriteRawMessage(this);
         #else
-          if (UserRequested != false) {
+          if (HasUserRequested) {
             output.WriteRawTag(8);
             output.WriteBool(UserRequested);
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             output.WriteRawTag(18);
             output.WriteBytes(Uuid);
           }
@@ -4956,11 +5642,11 @@ namespace PLCrashUtil.Core {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-          if (UserRequested != false) {
+          if (HasUserRequested) {
             output.WriteRawTag(8);
             output.WriteBool(UserRequested);
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             output.WriteRawTag(18);
             output.WriteBytes(Uuid);
           }
@@ -4974,10 +5660,10 @@ namespace PLCrashUtil.Core {
         [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
         public int CalculateSize() {
           int size = 0;
-          if (UserRequested != false) {
+          if (HasUserRequested) {
             size += 1 + 1;
           }
-          if (Uuid.Length != 0) {
+          if (HasUuid) {
             size += 1 + pb::CodedOutputStream.ComputeBytesSize(Uuid);
           }
           if (_unknownFields != null) {
@@ -4992,10 +5678,10 @@ namespace PLCrashUtil.Core {
           if (other == null) {
             return;
           }
-          if (other.UserRequested != false) {
+          if (other.HasUserRequested) {
             UserRequested = other.UserRequested;
           }
-          if (other.Uuid.Length != 0) {
+          if (other.HasUuid) {
             Uuid = other.Uuid;
           }
           _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
