@@ -1,6 +1,6 @@
 using System;
 
-namespace PLCrashUtil.Models
+namespace PLCrashUtilLib.Models
 {
     /// <summary>
     /// Crash log system information.

@@ -1,6 +1,13 @@
 # PLCrashUtil - .NET Library and CLI Tool
 
-A comprehensive .NET library and command-line utility for parsing and converting PLCrash reports to iOS-compatible crash logs. Based on the original PLCrashReporter project, this C# implementation provides both programmatic API access and a convenient CLI tool.
+A comprehensive .NET library and command-line utility for parsing and converting PLCrash reports to iOS-compatible crash logs. Based on the original PLCrashReporter project, this C# implementation provides both programmatic API access via **PLCrashUtilLib** and a convenient CLI tool via **PLCrashUtil**.
+
+## Packages
+
+| Package | Version | Description |
+|---------|---------|-------------|
+| **PLCrashUtilLib** | 1.1.0 | Class library for programmatic integration |
+| **PLCrashUtil** | 1.1.0 | Global CLI tool for command-line usage |
 
 ## Features
 
@@ -13,26 +20,26 @@ A comprehensive .NET library and command-line utility for parsing and converting
 
 ## Installation
 
-### As a Global CLI Tool
+### CLI Tool
 
-Install globally using the .NET CLI:
+Install the global CLI tool:
 
 ```bash
 dotnet tool install --global PLCrashUtil
 ```
 
-### As a Library Dependency
+### Library
 
-Add to your .NET project:
+Add the library to your .NET project:
 
 ```bash
-dotnet add package PLCrashUtil
+dotnet add package PLCrashUtilLib
 ```
 
 Or via PackageManager:
 
 ```xml
-<PackageReference Include="PLCrashUtil" Version="1.0.0" />
+<PackageReference Include="PLCrashUtilLib" Version="1.1.0" />
 ```
 
 ## CLI Usage
@@ -56,7 +63,7 @@ plcrashutil convert --format=ios crash_report.plcrash > formatted_crash.txt
 ### Basic Example
 
 ```csharp
-using PLCrashUtil.Models;
+using PLCrashUtilLib.Models;
 
 // Load and parse a crash report
 byte[] crashData = File.ReadAllBytes("crash_report.plcrash");
@@ -75,6 +82,8 @@ string formattedReport = PLCrashReportTextFormatter.StringValueForCrashReport(
 Console.WriteLine(formattedReport);
 ```
 
+
+
 ## Building from Source
 
 ### Requirements
@@ -86,18 +95,25 @@ Console.WriteLine(formattedReport);
 
 ```bash
 # Clone the repository
-git clone https://github.com/BugSplatGit/plcrashutil-cs.git
-cd plcrashutil-cs
+git clone https://github.com/BugSplatGit/plcrashutil-dotnet.git
+cd plcrashutil-dotnet
 
-# Build the project
+# Build all projects
 dotnet build
 
-# Run tests (if any)
+# Run unit tests
 dotnet test
 
-# Create NuGet package
-dotnet pack
+# Create NuGet packages
+dotnet pack PLCrashUtilLib/PLCrashUtilLib.csproj --configuration Release
+dotnet pack PLCrashUtil/PLCrashUtil.csproj --configuration Release
 ```
+
+### Project Structure
+
+- `PLCrashUtilLib/` - Core library with crash report parsing logic
+- `PLCrashUtil/` - CLI tool that uses the library
+- `PLCrashUtilLib.Tests/` - Unit tests for the library
 
 ### Regenerating Protobuf Files
 
@@ -109,14 +125,31 @@ protoc --csharp_out=. PLCrashReport.proto
 
 ## Testing
 
-Test the tool with the included sample file:
+### Unit Tests
+
+The library includes comprehensive unit tests:
 
 ```bash
-# CLI tool
+# Run all tests
+dotnet test
+
+# Run with detailed output
+dotnet test --verbosity normal
+
+# Run tests for specific project
+dotnet test PLCrashUtilLib.Tests/
+```
+
+### Manual Testing
+
+Test the CLI tool with the included sample files:
+
+```bash
+# CLI tool (if installed globally)
 plcrashutil convert --format=ios fuzz_report.plcrash
 
 # From source
-dotnet run -- convert --format=ios fuzz_report.plcrash
+dotnet run --project PLCrashUtil -- convert --format=ios fuzz_report.plcrash
 ```
 
 ## Compatibility
