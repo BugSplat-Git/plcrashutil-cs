@@ -8,7 +8,7 @@
     
     <!-- NuGet Package Metadata -->
     <PackageId>PLCrashUtil</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>BugSplat LLC</Authors>
     <Company>BugSplat LLC</Company>
     <Product>PLCrashUtil</Product>
@@ -20,6 +20,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>Updated to use PLCrashUtilLib 1.1.0. Now available as both a standalone CLI tool and library package for programmatic integration.</PackageReleaseNotes>
     <Copyright>Copyright (c) BugSplat LLC</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     
