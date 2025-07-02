@@ -1,4 +1,4 @@
-namespace PLCrashUtil.Models
+namespace PLCrashUtilLib.Models
 {
     /// <summary>
     /// Supported text output formats.

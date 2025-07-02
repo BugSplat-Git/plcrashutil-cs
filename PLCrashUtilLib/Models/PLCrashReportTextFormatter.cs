@@ -3,7 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace PLCrashUtil.Models
+namespace PLCrashUtilLib.Models
 {
     /// <summary>
     /// Formats PLCrashReport data as human-readable text.

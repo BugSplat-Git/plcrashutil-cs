@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace PLCrashUtil.Models
+namespace PLCrashUtilLib.Models
 {
     /// <summary>
     /// Crash file magic identifier

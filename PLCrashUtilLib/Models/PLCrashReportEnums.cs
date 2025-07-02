@@ -1,4 +1,4 @@
-namespace PLCrashUtil.Models
+namespace PLCrashUtilLib.Models
 {
     /// <summary>
     /// Indicates the Operating System under which a Crash Log was generated.

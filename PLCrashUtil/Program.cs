@@ -1,9 +1,10 @@
 using System;
 using System.IO;
 using System.Linq;
-using PLCrashUtil.Models;
+using PLCrashUtilLib.Models;
+using PLCrashUtilLib;
 
-namespace PlCrashUtil;
+namespace PLCrashUtil;
 
 class Program
 {

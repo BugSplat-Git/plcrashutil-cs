@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    
+    <!-- NuGet Package Metadata -->
+    <PackageId>PLCrashUtilLib</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>BugSplat LLC</Authors>
+    <Company>BugSplat LLC</Company>
+    <Product>PLCrashUtilLib</Product>
+    <Description>A .NET library for parsing and converting PLCrash reports to iOS-compatible crash logs. Supports reading PLCrashReporter protobuf format and provides programmatic API for crash report analysis.</Description>
+    <Summary>Parse and convert PLCrash reports with .NET - library for programmatic access</Summary>
+    <PackageTags>crash-report;plcrash;ios;debugging;protobuf;crash-analysis;apple;mobile;dotnet;library</PackageTags>
+    <PackageProjectUrl>https://github.com/BugSplatGit/plcrashutil-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/BugSplatGit/plcrashutil-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Copyright>Copyright (c) BugSplat LLC</Copyright>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    
+    <!-- Library Configuration -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    
+    <!-- Package Output -->
+    <PackageOutputPath>../nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.25.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="\" />
+    <None Include="../LICENSE" Pack="true" PackagePath="\" />
+    <None Include="../ThirdPartyNotices.txt" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project> 
