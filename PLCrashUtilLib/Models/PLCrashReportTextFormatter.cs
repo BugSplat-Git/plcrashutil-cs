@@ -262,8 +262,8 @@ namespace PLCrashUtilLib.Models
 
                 // base_address - terminating_address [designator]file_name arch <uuid> file_path
                 string fmt = lp64 ? 
-                    "{0,18:x} - {1,18:x} {2}{3} {4}  <{5}> {6}" : 
-                    "{0,10:x} - {1,10:x} {2}{3} {4}  <{5}> {6}";
+                    "0x{0,16:x} - 0x{1,16:x} {2}{3} {4}  <{5}> {6}" : 
+                    "0x{0,8:x} - 0x{1,8:x} {2}{3} {4}  <{5}> {6}";
 
                 var imageName = Path.GetFileName(imageInfo.ImageName);
                 var terminatingAddress = imageInfo.ImageBaseAddress + Math.Max(1UL, imageInfo.ImageSize) - 1;
