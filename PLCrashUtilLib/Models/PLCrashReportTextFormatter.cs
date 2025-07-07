@@ -144,7 +144,7 @@ namespace PLCrashUtilLib.Models
 
             // Exception code
             text.AppendLine($"Exception Type:  {report.SignalInfo.Name}");
-            text.AppendLine($"Exception Codes: {report.SignalInfo.Code} at 0x{report.SignalInfo.Address:X16}");
+            text.AppendLine($"Exception Codes: {report.SignalInfo.Code} at 0x{report.SignalInfo.Address:x16}");
 
             var crashedThread = report.Threads.FirstOrDefault(t => t.Crashed);
             if (crashedThread != null)
@@ -204,7 +204,7 @@ namespace PLCrashUtilLib.Models
                 int regColumn = 0;
                 foreach (var reg in crashedThread.Registers)
                 {
-                    string regFmt = lp64 ? "{0,6}: 0x{1:X16} " : "{0,6}: 0x{1:X8} ";
+                    string regFmt = lp64 ? "{0,6}: 0x{1:x16} " : "{0,6}: 0x{1:x8} ";
 
                     // Remap register names to match Apple's crash reports
                     string regName = reg.RegisterName;
@@ -262,8 +262,8 @@ namespace PLCrashUtilLib.Models
 
                 // base_address - terminating_address [designator]file_name arch <uuid> file_path
                 string fmt = lp64 ? 
-                    "{0,18:X} - {1,18:X} {2}{3} {4}  <{5}> {6}" : 
-                    "{0,10:X} - {1,10:X} {2}{3} {4}  <{5}> {6}";
+                    "0x{0,16:x} - 0x{1,16:x} {2}{3} {4}  <{5}> {6}" : 
+                    "0x{0,8:x} - 0x{1,8:x} {2}{3} {4}  <{5}> {6}";
 
                 var imageName = Path.GetFileName(imageInfo.ImageName);
                 var terminatingAddress = imageInfo.ImageBaseAddress + Math.Max(1UL, imageInfo.ImageSize) - 1;
@@ -373,7 +373,7 @@ namespace PLCrashUtilLib.Models
             }
             else
             {
-                symbolString = $"0x{baseAddress:X} + {pcOffset}";
+                symbolString = $"0x{baseAddress:x} + {pcOffset}";
             }
 
             // Format: frame_index image_name instruction_pointer symbol_string
@@ -382,9 +382,9 @@ namespace PLCrashUtilLib.Models
                 paddedImageName = paddedImageName.Substring(0, 35);
 
             var ipWidth = lp64 ? 16 : 8;
-            var ipFormat = $"0x{{0:X{ipWidth}}}";
+            var ipFormat = $"0x{{0:x{ipWidth}}}";
 
             return $"{frameIndex,-4}{paddedImageName} {string.Format(ipFormat, frameInfo.InstructionPointer)} {symbolString}\n";
         }
     }
-} 
+}
