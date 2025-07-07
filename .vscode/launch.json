@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/PLCrashUtil/bin/Debug/net6.0/PLCrashUtil.dll",
+            "args": [
+                "convert",
+                "--format=ios",
+                "${workspaceFolder}/ue.plcrash"
+            ],
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopAtEntry": false
+        }
+    ]
+}
