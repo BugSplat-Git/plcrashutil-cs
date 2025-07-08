@@ -397,8 +397,8 @@ namespace PLCrashUtilLib.Models
                 string? uuid = null;
                 if (image.Uuid?.Length == 16)
                 {
-                    var guidBytes = image.Uuid.ToByteArray();
-                    uuid = new Guid(guidBytes).ToString("D").ToUpper();
+                    var bytes = image.Uuid.ToByteArray();
+                    uuid = BitConverter.ToString(bytes).Replace("-", "").ToLowerInvariant();
                 }
 
                 images[i] = new PLCrashReportBinaryImageInfo(
@@ -441,4 +441,4 @@ namespace PLCrashUtilLib.Models
             return new PLCrashReportExceptionInfo(exception.Name, exception.Reason, frames);
         }
     }
-} 
+}
