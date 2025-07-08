@@ -6,7 +6,7 @@
     
     <!-- NuGet Package Metadata -->
     <PackageId>PLCrashUtilLib</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.1.1</Version>
     <Authors>BugSplat LLC</Authors>
     <Company>BugSplat LLC</Company>
     <Product>PLCrashUtilLib</Product>
@@ -18,7 +18,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Initial library release - separated from CLI tool for programmatic use. Includes comprehensive API for parsing PLCrash reports and formatting to iOS-compatible text output.</PackageReleaseNotes>
+    <PackageReleaseNotes>Hex values in output are now lowercase to match plcrashreporter conventions.</PackageReleaseNotes>
     <Copyright>Copyright (c) BugSplat LLC</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     
@@ -41,4 +41,4 @@
     <None Include="../ThirdPartyNotices.txt" Pack="true" PackagePath="\" />
   </ItemGroup>
 
-</Project> 
+</Project>
