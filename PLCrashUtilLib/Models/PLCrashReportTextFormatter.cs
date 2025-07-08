@@ -259,18 +259,25 @@ namespace PLCrashUtilLib.Models
                 }
 
                 string uuid = imageInfo.ImageUUID ?? "???";
+                if (Guid.TryParse(uuid, out var parsedUuid))
+                {
+                    uuid = parsedUuid.ToString("N").ToLowerInvariant();
+                }
 
                 // base_address - terminating_address [designator]file_name arch <uuid> file_path
+                string leadingPad = new string(' ', 7);
                 string fmt = lp64 ? 
-                    "0x{0,16:x} - 0x{1,16:x} {2}{3} {4}  <{5}> {6}" : 
-                    "0x{0,8:x} - 0x{1,8:x} {2}{3} {4}  <{5}> {6}";
+                    "{0}0x{1:x}{2,17} - 0x{3:x}{4,17} {5}{6} {7}  <{8}> {9}" : 
+                    "{0}0x{1:x}{2,9} - 0x{3:x}{4,9} {5}{6} {7}  <{8}> {9}";
 
                 var imageName = Path.GetFileName(imageInfo.ImageName);
                 var terminatingAddress = imageInfo.ImageBaseAddress + Math.Max(1UL, imageInfo.ImageSize) - 1;
-
+                var baseAddr = imageInfo.ImageBaseAddress;
+                var termAddr = terminatingAddress;
                 text.AppendLine(string.Format(fmt,
-                    imageInfo.ImageBaseAddress,
-                    terminatingAddress,
+                    leadingPad,
+                    baseAddr, string.Empty.PadLeft(lp64 ? 16 - baseAddr.ToString("x").Length : 8 - baseAddr.ToString("x").Length),
+                    termAddr, string.Empty.PadLeft(lp64 ? 16 - termAddr.ToString("x").Length : 8 - termAddr.ToString("x").Length),
                     binaryDesignator,
                     imageName,
                     archName,
