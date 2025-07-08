@@ -6,7 +6,7 @@
     
     <!-- NuGet Package Metadata -->
     <PackageId>PLCrashUtilLib</PackageId>
-    <Version>1.1.2</Version>
+    <Version>1.1.3</Version>
     <Authors>BugSplat LLC</Authors>
     <Company>BugSplat LLC</Company>
     <Product>PLCrashUtilLib</Product>
@@ -18,7 +18,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>Fixed binary image formatting to match Apple plcrashreporter conventions.</PackageReleaseNotes>
+    <PackageReleaseNotes>Fixed binary image formatting and UUID output to match Apple plcrashreporter conventions.</PackageReleaseNotes>
     <Copyright>Copyright (c) BugSplat LLC</Copyright>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     
