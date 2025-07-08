@@ -6,8 +6,8 @@ A comprehensive .NET library and command-line utility for parsing and converting
 
 | Package | Version | Description |
 |---------|---------|-------------|
-| **PLCrashUtilLib** | 1.1.0 | Class library for programmatic integration |
-| **PLCrashUtil** | 1.1.0 | Global CLI tool for command-line usage |
+| **PLCrashUtilLib** | 1.1.2 | Class library for programmatic integration |
+| **PLCrashUtil** | 1.1.2 | Global CLI tool for command-line usage |
 
 ## Features
 
@@ -39,7 +39,7 @@ dotnet add package PLCrashUtilLib
 Or via PackageManager:
 
 ```xml
-<PackageReference Include="PLCrashUtilLib" Version="1.1.0" />
+<PackageReference Include="PLCrashUtilLib" Version="1.1.2" />
 ```
 
 ## CLI Usage
@@ -172,4 +172,4 @@ Copyright (c) BugSplat LLC.
 
 ## Third-Party Dependencies
 
-See [ThirdPartyNotices.txt](ThirdPartyNotices.txt) for information about third-party dependencies. 
+See [ThirdPartyNotices.txt](ThirdPartyNotices.txt) for information about third-party dependencies.
